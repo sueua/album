@@ -1,0 +1,809 @@
+<!doctype html>
+<meta charset='utf-8'>
+        <script>
+        function init_viewport()
+        {
+            if(/Android (\d+\.\d+)/.test(navigator.userAgent))
+            {
+                var version = parseFloat(RegExp.$1);
+
+                if(version>2.3)
+                {
+                    var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+                    var phoneScale = parseInt(width)/500;
+                    document.write('<meta name="viewport" content="width=500, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+                }
+                else
+                {
+                    document.write('<meta name="viewport" content="width=500, target-densitydpi=device-dpi">');    
+                }
+            }
+            else if(navigator.userAgent.indexOf('iPhone') != -1)
+            {
+                var phoneScale = parseInt(window.screen.width)/500;
+                document.write('<meta name="viewport" content="width=500; min-height=750;initial-scale=' + phoneScale +'; user-scalable=no;" /> ');         //0.75   0.82
+            }
+            else 
+            {
+                document.write('<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> ');         //0.75   0.82
+
+            }
+        }
+        init_viewport();
+            document.ontouchmove = function(e)
+            {
+                e.preventDefault();
+            } 
+
+            var module_inits = [];
+
+            var upload_permission = true;
+            var atkname = 'zqyy';
+
+            
+            function load_init_modules()
+            {
+                for(var i=0; i<module_inits.length; i++)
+                {
+                    module_inits[i]();
+                }
+            }
+
+            function call_me(fun)
+            {
+                module_inits.push(fun);
+            }
+
+            onload = load_init_modules;
+
+
+var slider_images_url = [];
+
+slider_images_url.push('photo/xa_382665314078.jpg');
+slider_images_url.push('photo/xa_382665327432.jpg');
+slider_images_url.push('photo/xa_382665336613.jpg');
+slider_images_url.push('photo/xa_382665348769.jpg');
+slider_images_url.push('photo/xa_382665372299.jpg');
+slider_images_url.push('photo/xa_382665389677.jpg');
+slider_images_url.push('photo/xa_382668203345.jpg');
+slider_images_url.push('photo/xa_382668212817.jpg');
+slider_images_url.push('photo/xa_382668224372.jpg');
+slider_images_url.push('photo/xa_382668242943.jpg');
+slider_images_url.push('photo/xa_382668258087.jpg');
+slider_images_url.push('photo/xa_382668235172.jpg');
+slider_images_url.push('photo/xa_382669865634.jpg');
+slider_images_url.push('photo/xa_382669879031.jpg');
+slider_images_url.push('photo/xa_382669906985.jpg');
+slider_images_url.push('photo/xa_382669941937.jpg');
+slider_images_url.push('photo/xa_382669921354.jpg');
+slider_images_url.push('photo/xa_382672611058.jpg');
+slider_images_url.push('photo/xa_382669975817.jpg');
+slider_images_url.push('photo/xa_382669996260.jpg');
+slider_images_url.push('photo/xa_382672366864.jpg');
+slider_images_url.push('photo/xa_382672378456.jpg');
+slider_images_url.push('photo/xa_382672397416.jpg');
+slider_images_url.push('photo/xa_382672413041.jpg');
+slider_images_url.push('photo/xa_382672469836.jpg');
+slider_images_url.push('photo/xa_382672496284.jpg');
+slider_images_url.push('photo/xa_382673316889.jpg');
+slider_images_url.push('photo/xa_382673328216.jpg');
+slider_images_url.push('photo/xa_382672482739.jpg');
+slider_images_url.push('photo/xa_382673306406.jpg');
+slider_images_url.push('photo/xa_382673346390.jpg');
+slider_images_url.push('photo/xa_382673353285.jpg');
+var date = 20161129;
+var zan_num = 0;
+var e_bookid = 'Fpx5HcVlzcra_vPG9KhPoIkMODpcGPT-';
+var e_desc = {"de":"\u795e\u79d8\u7684\u53e4\u57c3\u53ca\uff08\u5341\u4e8c\uff09"}["de"];
+var e_openid = null;
+var e_scene = 'xuandong';
+var editmode = false;
+var wxid = 'xuanmeixc';
+var shareid = '';
+var guanzhu_url = 'http://mp.weixin.qq.com/s?__biz=MzIzMzE4Mzk4Mg==&mid=539739355&idx=1&sn=db9977de95a7a42b08c580297326425f#rd';
+var words = {};
+var app = '';
+var e_music_url = 'assets/yugen.mp3';
+              var e_music_title = '';
+              var tbssaveoff = false;
+              var isguangchang = '';
+             </script>
+
+<style type="text/css">
+@-webkit-keyframes zhuan
+        {
+            0%
+            {
+                -webkit-transform:rotate(0deg);
+            }
+
+            100%
+            {
+                -webkit-transform:rotate(360deg);
+            }
+        }
+
+  
+    .showwords 
+    {
+        font-size: 23px;
+        color: black;
+        letter-spacing: 6px;
+        position: absolute;
+        font-weight: bold;
+        z-index: 1;
+        top: 93%;
+        margin: -39px;
+        left: 39px;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        text-shadow: 2px 2px 20px white, -2px -2px 20px white, -2px 2px 20px white, 2px -2px 20px white;
+        /*background-color: rgba(255, 255, 255, 0.4);*/
+    }
+
+    *
+    {
+        padding: 0px;
+        margin: 0px;
+        -webkit-box-sizing: border-box;
+    }
+
+    body
+    {
+        background-color: black;
+
+    }
+
+    #container
+    {
+        width: 500px;
+        height: 110%;
+        position: absolute;
+        overflow: hidden;
+        top: -10%;
+        left: 0px;
+        background-color: black;
+        /*background-image: url(assets/s.jpg); */
+    }
+     @-webkit-keyframes liuxing
+    {
+        0%{-webkit-transform:translate(0px,0px) rotate(0deg);opacity: 1;-webkit-animation-timing-function:linear;}
+/*            5%{-webkit-transform:translate(-50px,-10px) #viewer_id#rotate(0deg);opacity: 1}*/
+        30%{-webkit-transform:translate(-500px,100px) rotate(-5deg);opacity: 0;-webkit-animation-timing-function:ease-in;}
+        100%{-webkit-transform:translate(-500px,100px) rotate(-5deg);opacity: 0;-webkit-animation-timing-function:ease-in;}
+    }
+    @-webkit-keyframes fadein
+    {
+        from {opacity: 0}
+        to   {opacity: 1}
+    }
+    @-webkit-keyframes fadeout
+    {
+        from {opacity: 1}
+        to   {opacity: 0}
+    }
+</style>
+<link rel="stylesheet" href="assets/style.css" />
+<script type="text/javascript" src="assets/jquery-1.js"></script>
+<script type="text/javascript" src="assets/ipresenter.js"></script>
+
+<div id='container' class='container'>
+    <img src='assets/s.jpg' style='position:absolute;top:0px;left:0px;height:900px;'>
+    <img src='assets/2000.png' style='position:absolute;top:100px;left:500px;-webkit-animation: liuxing 5s ease-in 1s infinite;'>
+    <img src='assets/2000.png' style='position:absolute;top:200px;left:500px;-webkit-animation: liuxing 5s ease-in 2s infinite;'>
+    <img src='assets/2000.png' style='position:absolute;top:300px;left:500px;-webkit-animation: liuxing 5s ease-in infinite;'>
+    <img src='assets/2000.png' style='position:absolute;top:0px;left:500px;-webkit-animation: liuxing 5s ease-in 1.5s infinite;'>
+    <img src='assets/2000.png' style='position:absolute;top:400px;left:500px;-webkit-animation: liuxing 5s ease-in 3s infinite;'>
+    <img src='assets/2000.png' style='position:absolute;top:500px;left:500px;-webkit-animation: liuxing 5s ease-in 4s infinite;'>
+    <div id="ipresenter">
+        <div id='xuandiv1' class="step" data-x="0" data-y="0" data-pausetime="3000">
+            <img id='xuanimg1' width='400'/>
+            <span id='word1' class='showwords'></span>
+        </div>
+        <div id='xuandiv2' class="step" data-x="1500" data-y="0" data-rotatex="180" data-easing="easeInOutQuint" data-pausetime="3000">
+            <img id='xuanimg2' width='400'/>
+            <span id='word2' class='showwords'></span>
+        </div>
+        <div id='xuandiv3' class="step" data-x="3000" data-y="0" data-rotatey="180" data-pausetime="3000">
+            <img id='xuanimg3' width='400'/>
+            <span id='word3' class='showwords'></span>
+        </div>
+        <div id='xuandiv4' class="step" data-x="4500" data-y="0" data-rotatex="180" data-pausetime="3000">
+            <img id='xuanimg4' width='400'/>
+            <span id='word4' class='showwords'></span>
+        </div>
+        <div id='xuandiv5' class="step" data-x="6000" data-y="0" data-rotate="180" data-pausetime="3000">
+            <img id='xuanimg5' width='400'/>
+            <span id='word5' class='showwords'></span>
+        </div>
+        <div id='xuandiv6' class="step" data-x="7500" data-y="0" data-rotatey="180" data-pausetime="3000">
+            <img id='xuanimg6' width='400'/>
+            <span id='word6' class='showwords'></span>
+        </div>
+        <div id='xuandiv7' class="step" data-x="9000" data-y="0" data-pausetime="3000">
+            <img id='xuanimg7' width='400'/>
+            <span id='word7' class='showwords'></span>
+        </div>
+        <div id='xuandiv8' class="step" data-x="10500" data-y="0" data-rotate="80" data-pausetime="3000">
+            <img id='xuanimg8' width='400'/>
+            <span id='word8' class='showwords'></span>
+        </div>
+        <div id='xuandiv9' class="step" data-x="12000" data-y="0" data-rotatex="180" data-pausetime="3000">
+            <img id='xuanimg9' width='400'/>
+            <span id='word9' class='showwords'></span>
+        </div>
+        <div id='xuandiv10' class="step" data-x="13500" data-y="0" data-rotatey="180" data-pausetime="3000">
+            <img id='xuanimg10' width='400'/>
+            <span id='word10' class='showwords'></span>
+        </div>
+        <div id='xuandiv11' class="step" data-x="13000" data-y="0" data-rotatey="-180" data-pausetime="3000">
+            <img id='xuanimg11' width='400'/>
+            <span id='word11' class='showwords'></span>
+        </div>
+        <div id='xuandiv12' class="step" data-x="16500" data-y="0" data-rotatey="180" data-pausetime="3000">
+            <img id='xuanimg12' width='400'/>
+            <span id='word12' class='showwords'></span>
+        </div>
+    </div>
+
+</div>
+<div id='pagetitle' style='position:absolute;width:450px;height:600px;top:0px;left:25px;font-size:45px;color:#fff;overflow:hidden;opacity:0;'>
+    <div style='display:table;width:450px;height:200px;top:280px;left:0px;position:absolute;text-align:center;overflow:hidden;position:absolute;'>
+        <div id='titlecontent' style='display:table-cell;width:450px;height:200px;vertical-align:middle;padding-left:10px;padding-right:10px;line-height:150%;oveflow:hidden;position:absolute;text-shadow:1px 1px 1px #000'></div>
+    </div>
+</div>
+
+
+<script>
+var image_size_width=[];
+var image_size_height=[];
+var image_ready_num=0;
+var image_url_index=0;
+var have_num = 0;
+var canshow = true;
+var reshow = false;
+var timeout1;
+var inter1;
+var pageindex = 1;
+
+var get_pid = function(url){
+    var index1 = url.indexOf("?");
+    if(index1 != -1)
+    {
+        url = url.substr(0, index1);
+    }
+    return url.toString().substr(url.lastIndexOf("/") + 1);
+}
+
+function id(name)
+{
+    return document.getElementById(name);
+}
+
+function load_images()
+{
+    reshow = false;
+    image_size_width=[];
+    image_size_height=[];
+    Onload_imgs_url=[];
+    image_ready_num=18;
+    image_url_index=0;
+    have_num = 0;
+    error_num = 0;
+    // id('page1').style.webkitAnimation = '';
+    // id('page2').style.webkitAnimation = '';
+    // id('page1').style.display = 'none';
+    // id('page2').style.display = 'none';
+    // clearTimeout(timeout1);
+    // clearTimeout(timeout2);
+    begin_titletime = new Date();
+    begin_titletime = begin_titletime.getTime();
+    showtitle();
+    clearTimeout(timeout1);
+    clearInterval(inter1);
+    canshow = true;
+
+
+    bl_keepload = 'first';
+    step_load();      
+}
+function showtitle()
+{
+    if(reshow == true)
+        return;
+    var content = id('titlecontent');
+    content.innerHTML = e_desc;
+    id('pagetitle').style.webkitAnimation = 'fadein .5s linear both';
+}
+function distitle()
+{
+    if(reshow == true)
+        return;
+    id('pagetitle').style.webkitAnimation = 'fadeout 1s linear both';
+}
+
+//每次执行加载后5张图片
+var bl_keepload = 'first';
+var step_loadnum = 5;
+function step_load()
+{
+    var load_num = 0
+    //初步加载X张
+    if(image_url_index  == 0 && bl_keepload == 'first')
+    {
+        console.log('loading continue');
+        if(slider_images_url.length > step_loadnum)
+        {
+            load_num = step_loadnum;
+            bl_keepload = 'next';
+        }
+        else
+        {
+            load_num = slider_images_url.length;
+            bl_keepload = 'end';
+        }
+        for(var i = 0; i< load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+    else if(bl_keepload == 'end')
+    {
+        return;
+    }
+    else
+    {
+         console.log('loading continue');
+        if(slider_images_url.length - image_url_index >step_loadnum*2)
+        { 
+            load_num = step_loadnum;
+        }
+        else
+        {
+            load_num = slider_images_url.length - image_url_index - step_loadnum;
+            bl_keepload = 'end';
+        }
+        for(var i = image_url_index +step_loadnum; i< image_url_index + step_loadnum + load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+
+}
+function image_onload(event)
+{
+    if(reshow == true)
+        return;
+
+    var img=event.target;
+    var index = img.index;
+
+    if(index < step_loadnum)
+    {
+        Onload_imgs_url[index] = img.src;
+        image_size_height[index] = img.height;
+        image_size_width[index] = img.width;
+        have_num++;
+    }
+    else
+    {
+        Onload_imgs_url[image_ready_num] = img.src;
+        image_size_width[image_ready_num] = img.width;
+        image_size_height[image_ready_num] = img.height;
+        image_ready_num++;
+    }
+    if((have_num  +error_num >= step_loadnum || slider_images_url.length == have_num) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        delaytime = 3000;
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+            timeout1 = setTimeout(begin_show,500);
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout1 = setTimeout(function()
+                {
+                    distitle();
+                    timeout2 = setTimeout(begin_show,500);
+                },dis_titletime);
+        }
+
+    }
+}
+function image_onerror(event)
+{
+    if(reshow == true)
+        return;
+
+    var img=event.target;
+    var index = img.index;
+
+
+    if(index < step_loadnum)
+    {
+        Onload_imgs_url[index] = 'not find';
+        image_size_height[index] = img.height;
+        image_size_width[index] = img.width;
+        error_num++;
+    }
+    else
+    {
+        Onload_imgs_url[image_ready_num] = img.src;
+        image_size_width[image_ready_num] = img.width;
+        image_size_height[image_ready_num] = img.height;
+        image_ready_num++;
+    }
+    if((have_num + error_num >= step_loadnum || slider_images_url.length == have_num) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        delaytime = 3000;
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+            timeout1 = setTimeout(begin_show,500);
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout1 = setTimeout(function()
+                {
+                    distitle();
+                    timeout2 = setTimeout(begin_show,500);
+                },dis_titletime);
+        }
+
+    }
+}
+function begin_show()
+{
+    images_init();
+    get_ready();
+    timeout1 = setTimeout(function()
+    {
+        set_next_img();
+        inter1 =  setInterval(set_next_img,5000);
+    },1000);
+}
+
+function insertEnter(str,n){
+    var len = str.length;
+    var strTemp = '';
+    if(len > n){
+    strTemp = str.substring(0,n);
+    str = str.substring(n,len);
+    return strTemp+'\n'+str;
+    }else{
+    return str;
+    }
+}
+
+function set_next_img()
+{
+    if(pageindex == 13)
+        pageindex =1;
+    if(image_url_index == Onload_imgs_url.length)
+    {
+        image_url_index = 0;
+    }
+    setImageindex();
+    id('xuanimg'+pageindex).src = Onload_imgs_url[image_url_index];
+
+    var word = id('word'+pageindex);
+    var word_string = words[get_pid(Onload_imgs_url[image_url_index])];
+    if(word_string != undefined)
+    {   
+        word_string = word_string.replace(/[\n]/ig,'');
+        
+        word.style.top = "90%";
+        var word_length = word_string.length;
+        if(word_length < 6)
+            word.style.fontSize = "26px";
+        else
+        {
+            word.style.fontSize = "23px";
+            if(word_length > 10)
+            {
+                word.style.top = "79%";
+                word_string = insertEnter(word_string, 5);
+            }
+        }
+        word.innerText = word_string;
+    }
+    else
+        word.innerText = "";
+    
+    pageindex++;
+    image_url_index++;
+}
+function reload_scene()
+{
+    reshow = true;
+    Onload_imgs_url = [];
+    for(var i =0; i<slider_images_url.length;i++)
+    {
+        Onload_imgs_url[i] = slider_images_url[i];
+    }
+    image_url_index = 0;
+    images_init();
+}
+
+function get_ready()
+{
+    $(document).ready(function(){
+        $('#ipresenter').iPresenter({
+            animSpeed: 2500,
+            // timer: '360Bar',s
+            // timerDiameter: 60,
+            // timerStroke: 5,
+            // timerPadding: 5,
+            // timerColor: '#000',
+            // timerBg: '#FFF',
+            timerOpacity: 0
+            // directionNav: false,
+            // controlNav: true
+        });
+    });
+    id('ipresenter').style.webkitAnimation = 'fadein 2s ease-in both';
+}
+
+function images_init()
+{
+    for(var i=1; i<13;i++)
+    {
+        var img = id('xuanimg'+i);
+        if(image_url_index == Onload_imgs_url.length)
+            image_url_index = 0;
+        setImageindex();
+        img.src= Onload_imgs_url[image_url_index];
+
+        var word = id('word'+i);
+        var word_string = words[get_pid(Onload_imgs_url[image_url_index])];
+        if(word_string != undefined)
+        {   
+            word_string = word_string.replace(/[\n]/ig,'');
+            
+            word.style.top = "90%";
+            var word_length = word_string.length;
+            if(word_length < 6)
+                word.style.fontSize = "26px";
+            else
+            {
+                if(word_length > 10)
+                {
+                    word_string = insertEnter(word_string, 5);
+                    word.style.top = "79%";
+                }
+                word.style.fontSize = "23px";
+            }
+            word.innerText = word_string;
+        }
+        else
+            word.innerText = "";
+        
+        image_url_index++;
+    }
+    image_url_index = 0;
+}
+function setImageindex()
+{
+    if(image_url_index == Onload_imgs_url.length)
+        image_url_index = 0;
+
+    while(Onload_imgs_url[image_url_index] == 'not find' || Onload_imgs_url[image_url_index] == 'loading')
+    {
+        if(image_url_index % step_loadnum == 0)
+        {
+            // alert()
+            step_load();
+        }
+        image_url_index++;
+        if(image_url_index == Onload_imgs_url.length)
+            image_url_index = 0;
+    }
+    console.log('setimg:'+Onload_imgs_url[image_url_index]);
+    if(image_url_index % step_loadnum == 0)
+    {
+        step_load();
+    }
+}
+
+call_me(load_images);
+
+
+        if(typeof(objid) === "undefined")
+        {
+            var objid = function(id)
+            {
+                return document.getElementById(id);
+            }
+        }
+
+
+        function on_wx_music_init()
+        {
+            if(e_desc != "")
+            {
+                document.title = e_desc.replace("<br>", "\n").replace("<br/>", "\n");;
+            }
+            else
+            {
+                document.title = "音乐相册";
+            }
+            loadingdiv_out();
+            create_music();
+
+
+        }
+
+
+
+
+        call_me(on_wx_music_init);
+
+        //音乐播放
+
+        var music_header   = 'http://kawaweika.qiniudn.com/sound/';
+        var e_music_player = new Audio();
+
+        function play_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+
+            if(e_music_url.indexOf('qqmusic') != -1)
+            {
+                mymusic = 'https://qnphoto.kagirl.cn/music/688042.m4a';
+            }
+            else
+            {
+                mymusic = e_music_url;
+            }
+
+            e_music_player.src  = mymusic;
+            e_music_player.loop = 'loop';
+
+
+            e_music_player.onerror = function(){
+                if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                {
+                    var url = e_music_url.replace("http://sound.kagirl.net", "https://music.kagirl.cn");
+                }
+                else
+                {
+                    var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                }
+
+                e_music_player.src = url;
+                e_music_player.play();
+                e_music_player.onerror = null;
+            }
+            
+            e_music_player.play();
+            
+            //检查音乐是否缓冲成功
+            setTimeout(function()
+            {
+                var timeRanges = e_music_player.buffered;
+                var timeBuffered = timeRanges.end(timeRanges.length - 1);
+                var bufferPercent = timeBuffered /e_music_player.duration; 
+                
+
+                if(isNaN(bufferPercent) || bufferPercent == 0)
+                {
+                    if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                    {
+                        var url = e_music_url.replace("http://sound.kagirl.net", "http://kawaweika.qiniudn.com");
+                    }
+                    else
+                    {
+                        var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                    }
+                    e_music_player.src = url;
+                    e_music_player.play();
+                }
+            },5000);
+
+
+            if(objid('sound_image'))
+            {
+                objid('sound_image').style.webkitAnimation     = "zhuan 3s linear infinite";
+            }
+            
+            bplay = 1;
+        }
+
+        function create_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+            
+            play_music();
+
+            sound_div = document.createElement("div");
+            sound_div.setAttribute("ID", "cardsound");
+            sound_div.style.cssText = "position:fixed;right:20px;top:25px;z-index:50;visibility:visible;";
+            sound_div.onclick = switchsound;
+
+            bg_htm  = "<img id='sound_image' src='assets/music_note_big.png' style='-webkit-animation:zhuan 3s linear infinite'>";
+            txt_htm = "<div id='music_txt' style='color:white;position:absolute;left:-40px;top:30px;width:60px'></div>"
+
+            sound_div.innerHTML = bg_htm  + txt_htm;
+
+            document.body.appendChild(sound_div);
+        } 
+
+        var bplay = 0;              
+        
+        function switchsound()
+        {
+            au = e_music_player;
+            ai = objid('sound_image');
+            if(au.paused)
+            {
+                bplay = 1;
+                au.play();
+                ai.style.webkitAnimation     = "zhuan 3s linear infinite";
+                objid("music_txt").innerHTML = "打开";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+            else
+            {
+                bplay = 0;
+                au.pause();
+                ai.style.webkitAnimation     = "";
+                objid("music_txt").innerHTML = "关闭";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+        }
+
+    function loadingdiv_out()
+    {
+        objid('loadingdiv').style.webkitAnimation = 'fadeout 0.3s linear both';
+        if(navigator.userAgent.indexOf('Windows Phone')!=1)
+        {
+            objid('loadingdiv').style.display = 'none';
+        }
+
+        setTimeout(function()
+        {
+            objid('loadingdiv').style.display = 'none';
+        },400)
+    }
+    
+    </script>
+
+
+
+<div id='loadingdiv'>
+    <div class='loadingword'>相册正在加载中<br>请稍等……</div>
+</div>
+

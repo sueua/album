@@ -1,0 +1,1486 @@
+<!doctype html>
+<meta charset='utf-8'>
+        <script>
+        function init_viewport()
+        {
+            if(/Android (\d+\.\d+)/.test(navigator.userAgent))
+            {
+                var version = parseFloat(RegExp.$1);
+
+                if(version>2.3)
+                {
+                    var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+                    var phoneScale = parseInt(width)/500;
+                    document.write('<meta name="viewport" content="width=500, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+                }
+                else
+                {
+                    document.write('<meta name="viewport" content="width=500, target-densitydpi=device-dpi">');    
+                }
+            }
+            else if(navigator.userAgent.indexOf('iPhone') != -1)
+            {
+                var phoneScale = parseInt(window.screen.width)/500;
+                document.write('<meta name="viewport" content="width=500; min-height=750;initial-scale=' + phoneScale +'; user-scalable=no;" /> ');         //0.75   0.82
+            }
+            else 
+            {
+                document.write('<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> ');         //0.75   0.82
+
+            }
+        }
+        init_viewport();
+            document.ontouchmove = function(e)
+            {
+                e.preventDefault();
+            } 
+
+            var module_inits = [];
+
+            var upload_permission = true;
+            var atkname = 'zqyy';
+
+            
+            function load_init_modules()
+            {
+                for(var i=0; i<module_inits.length; i++)
+                {
+                    module_inits[i]();
+                }
+            }
+
+            function call_me(fun)
+            {
+                module_inits.push(fun);
+            }
+
+            onload = load_init_modules;
+
+
+var slider_images_url = [];
+slider_images_url.push('photo/xa_298345537846.jpg');
+slider_images_url.push('photo/xa_300169526433.jpg');
+slider_images_url.push('photo/xa_298345567359.jpg');
+slider_images_url.push('photo/xa_300169539633.jpg');
+slider_images_url.push('photo/xa_298345587239.jpg');
+slider_images_url.push('photo/xa_298345619400.jpg');
+slider_images_url.push('photo/xa_298345595495.jpg');
+slider_images_url.push('photo/xa_298345608059.jpg');
+slider_images_url.push('photo/xa_298345624951.jpg');
+slider_images_url.push('photo/xa_298345638121.jpg');
+slider_images_url.push('photo/xa_298348376483.jpg');
+slider_images_url.push('photo/xa_298348388294.jpg');
+slider_images_url.push('photo/xa_300169556066.jpg');
+slider_images_url.push('photo/xa_298348408528.jpg');
+slider_images_url.push('photo/xa_298348431365.jpg');
+slider_images_url.push('photo/xa_298348457805.jpg');
+slider_images_url.push('photo/xa_298348428620.jpg');
+slider_images_url.push('photo/xa_298348447081.jpg');
+slider_images_url.push('photo/xa_298348463174.jpg');
+slider_images_url.push('photo/xa_298351583374.jpg');
+slider_images_url.push('photo/xa_298351612226.jpg');
+slider_images_url.push('photo/xa_298351635765.jpg');
+slider_images_url.push('photo/xa_298351655876.jpg');
+slider_images_url.push('photo/xa_298351676427.jpg');
+slider_images_url.push('photo/xa_298351693194.jpg');
+slider_images_url.push('photo/xa_298351669187.jpg');
+slider_images_url.push('photo/xa_300169564559.jpg');
+slider_images_url.push('photo/xa_298351713343.jpg');
+slider_images_url.push('photo/xa_298354632915.jpg');
+slider_images_url.push('photo/xa_298354672177.jpg');
+slider_images_url.push('photo/xa_298354699865.jpg');
+slider_images_url.push('photo/xa_298354722662.jpg');
+slider_images_url.push('photo/xa_298354751859.jpg');
+slider_images_url.push('photo/xa_298354777753.jpg');
+slider_images_url.push('photo/xa_298354833267.jpg');
+slider_images_url.push('photo/xa_300169597177.jpg');
+slider_images_url.push('photo/xa_298354823002.jpg');
+slider_images_url.push('photo/xa_298357342735.jpg');
+slider_images_url.push('photo/xa_298357362447.jpg');
+slider_images_url.push('photo/xa_298357385997.jpg');
+slider_images_url.push('photo/xa_298357403010.jpg');
+slider_images_url.push('photo/xa_298357417763.jpg');
+slider_images_url.push('photo/xa_298357426998.jpg');
+slider_images_url.push('photo/xa_298357447280.jpg');
+slider_images_url.push('photo/xa_298357437890.jpg');
+slider_images_url.push('photo/xa_298357452744.jpg');
+slider_images_url.push('photo/xa_298358597168.jpg');
+slider_images_url.push('photo/xa_298358604164.jpg');
+slider_images_url.push('photo/xa_298358618216.jpg');
+slider_images_url.push('photo/xa_298358681510.jpg');
+slider_images_url.push('photo/xa_298358662603.jpg');
+slider_images_url.push('photo/xa_298358638035.jpg');
+slider_images_url.push('photo/xa_298358697989.jpg');
+slider_images_url.push('photo/xa_298358715373.jpg');
+slider_images_url.push('photo/xa_298358729451.jpg');
+slider_images_url.push('photo/xa_298360234464.jpg');
+slider_images_url.push('photo/xa_298360222430.jpg');
+slider_images_url.push('photo/xa_298360259821.jpg');
+slider_images_url.push('photo/xa_298360276594.jpg');
+slider_images_url.push('photo/xa_298360283609.jpg');
+slider_images_url.push('photo/xa_298360313281.jpg');
+slider_images_url.push('photo/xa_298360327416.jpg');
+var date = 20161129;
+var zan_num = 0;
+var e_bookid = 'Fpx5HcVlzcpAgbP0y95s5jLeZgLmjQ3T';
+var e_desc = {"de":"\u632a\u5a01\u98ce\u666f\uff08\u4e94\uff09"}["de"];
+var e_openid = null;
+var e_scene = 'huijia';
+var editmode = false;
+var wxid = 'xuanmeixc';
+var shareid = '';
+var guanzhu_url = 'http://mp.weixin.qq.com/s?__biz=MzIzMzE4Mzk4Mg==&mid=539739355&idx=1&sn=db9977de95a7a42b08c580297326425f#rd';
+var words = {};
+var app = '';
+var e_music_url = 'assets/lzy_1748716.mp3';
+              var e_music_title = '';
+              var tbssaveoff = false;
+              var isguangchang = '';
+             </script>
+
+<style type="text/css">
+@-webkit-keyframes zhuan
+        {
+            0%
+            {
+                -webkit-transform:rotate(0deg);
+            }
+
+            100%
+            {
+                -webkit-transform:rotate(360deg);
+            }
+        }
+
+.showwords 
+{
+    font-size: 30px;
+    color: white;
+    letter-spacing: 6px;
+    position: absolute;
+    font-weight: bold;
+    z-index: 1;
+    top: 93%;
+    margin: -39px;
+    left: 39px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-shadow: 3px 3px 10px black, -3px -3px 10px black, -3px 3px 10px black, 3px -3px 10px black;
+    /*background-color: rgba(255, 255, 255, 0.69);*/
+}
+    
+*
+{
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+}
+
+body
+{
+    /*background-color: black;*/
+}
+
+#container
+{
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+#container > div,#container > img
+{
+    position: absolute;
+}
+
+#line1
+{
+    left: 255px;
+    top: 46px;
+    height: 300px;
+    width: 5px;
+    -webkit-transform-origin: 50% 100%;
+}
+#line2
+{
+    left: 255px;
+    top: 346px;
+    width: 5px;
+    height: 300px;
+    -webkit-transform-origin: 50% 0%;
+}
+#yuan
+{
+    left: 104px;
+    top: 179px;
+    -webkit-transform: scale(0);
+}
+#yuan1
+{
+    left: 143px;
+    top: 270px;
+    opacity: 0;
+}
+#line3
+{
+    width: 230px;
+    height: 5px;
+    background-color: #D3BFAE;
+    left: 19px;
+    top: 327px;
+    -webkit-transform-origin: 100% 50%;
+    -webkit-transform: scale(0,1);
+}
+#line4
+{
+    width: 221px;
+    height: 5px;
+    background-color: #D3BFAE;
+    left: 261px;
+    top: 327px;
+    -webkit-transform-origin: 0% 50%;
+    -webkit-transform: scale(0,1);
+}
+#word1
+{
+    left: 343px;
+    top: 27px;
+    opacity: 0;
+}
+#huochediv
+{
+    left: 21px;
+    top: 511px;
+    width: 180px;
+    height: 180px;
+    opacity: 0;
+    /*background-color: #fff;*/
+}
+#huoche
+{
+    left: 48px;
+    top: 41px;
+    position: absolute;
+    -webkit-transform-origin: 50% 80%;
+    -webkit-animation: huoche 0.5s linear infinite alternate;
+}
+#yun
+{
+    left: 97px;
+    top: 51px;
+    width: 55px;
+    position: absolute;
+    -webkit-animation: yunduo 1.4s linear infinite;
+}
+#yun1
+{
+    left: 97px;
+    top: 51px;
+    width: 55px;
+    position: absolute;
+    -webkit-animation: yunduo 1.4s 0.7s linear infinite backwards;
+}
+#div1h,#div4h
+{
+    width: 550px;
+    height: 400px;
+    /*background-color: #000;*/
+    left: 22px;
+    top: 165px;
+    overflow: hidden;
+    opacity: 0;
+    /*display: none;*/
+}
+#div1v,#div4v
+{
+    width: 490px;
+    height: 750px;
+    background-color: #000;
+    left: 21px;
+    top: 0px;
+    overflow: hidden;
+    opacity: 0;
+}
+#div2v
+{
+    width: 500px;
+    height: 780px;
+    overflow: hidden;
+    left: 0px;
+    top:0px;
+    opacity: 0;
+}
+#div2h
+{
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    left: 0px;
+    top: 180px;
+    opacity: 0;
+}
+#word2
+{
+    left: 25px;
+    top: 553px;
+    opacity: 0;
+}
+#feijidiv
+{
+    left: 297px;
+    top: 3px;
+    width: 200px;
+    height: 200px;
+}
+#yun2
+{
+    left: 31px;
+    top: 40px;
+    width: 50px;
+    position: absolute;
+    opacity: 0;
+}
+#yun3
+{
+    left: 110px;
+    top: 49px;
+    width: 60px;
+    position: absolute;
+    opacity: 0;
+}
+#feiji
+{
+    left: 59px;
+    top: 39px;
+    position: absolute;
+    width: 100px;
+    opacity: 0;
+}
+#yun4
+{
+    left: 48px;
+    top: 81px;
+    width: 85px;
+    position: absolute;
+    opacity: 0;
+}
+#div3v
+{
+    width: 500px;
+    height: 780px;
+    overflow: hidden;
+    opacity: 0;
+}
+#div3h
+{
+    width: 500px;
+    height: 350px;
+    overflow: hidden;
+    top: 190px;
+    opacity: 0;
+}
+#word3
+{
+    left: 28px;
+    top: 33px;
+    opacity: 0;
+}
+#jiaozi
+{
+    left: 328px;
+    top: 571px;
+    opacity: 0;
+}
+#word4
+{
+    left: 339px;
+    top: 31px;
+    opacity: 0;
+}
+#zixingche
+{
+    left: 51px;
+    top: 592px;
+    opacity: 0;
+}
+#lupai
+{
+    left: 35px;
+    top: 565px;
+    -webkit-transform-origin: 20% 90%;
+    opacity: 0;
+}
+#aixin1
+{
+    -webkit-transform: translate(-10px,76px) rotate(32deg) scale(0.8);
+    width: 146px;
+    height: 50px;
+    opacity: 0;
+}
+#aixin2
+{
+    -webkit-transform: translate(60px,51px) rotate(-21deg) scale(.7);
+    width: 146px;
+    height: 53px;
+    opacity: 0;
+}
+#div5v
+{
+    width: 530px;
+    height: 800px;
+    overflow: hidden;
+    opacity: 0;
+}
+#div5h
+{
+    width: 530px;
+    height: 353px;
+    overflow: hidden;
+    top: 175px;
+    opacity: 0;
+}
+#feijixian
+{
+    left: 98px;
+    top: 79px;
+    width: 102px;
+    opacity: 0;
+    position: absolute;
+}
+#word1,#word2,#word3,#word4,#word5
+{
+    display: none;
+}
+</style>
+<style type="text/css">
+@-webkit-keyframes line1_in
+{
+    0%  {-webkit-transform: translate(0px,-325px) scale(1,1);opacity: 1}
+    65% {-webkit-transform: translate(0px,0px) scale(1,1);opacity: 1}
+    99% {-webkit-transform: translate(0px,0px) scale(1,.5);opacity: 1}
+    100%{-webkit-transform: translate(0px,0px) scale(1,.5);opacity: 0;}
+}
+@-webkit-keyframes line2_in
+{
+    0%  {-webkit-transform: translate(0px,345px) scale(1,1);opacity: 1}
+    65% {-webkit-transform: translate(0px,0px) scale(1,1);opacity: 1}
+    99% {-webkit-transform: translate(0px,0px) scale(1,.4);opacity: 1}
+    100%{-webkit-transform: translate(0px,0px) scale(1,.4);opacity: 0}
+}
+@-webkit-keyframes yuan_in
+{
+    0%    {-webkit-transform: scale(0);}
+    60%   {-webkit-transform: scale(1.1);}
+    80%   {-webkit-transform: scale(0.95);}
+    100%  {-webkit-transform: scale(1);}
+}
+
+@-webkit-keyframes fadein
+{
+    from  {opacity: 0}
+    to    {opacity: 1}
+}
+@-webkit-keyframes fadeout
+{
+    from  {opacity: 1}
+    to    {opacity: 0}
+}
+@-webkit-keyframes title_out
+{
+    from  {-webkit-transform: scale(1,1);opacity: 1}
+    to    {-webkit-transform: scale(0.7,0.7);opacity: 0}
+}
+@-webkit-keyframes yuan_out
+{
+    0%    {-webkit-transform: scale(1);opacity: 1}
+    50%   {-webkit-transform: scale(0.05);opacity: 1}
+    100%  {-webkit-transform: scale(0.05);opacity: 0}
+}
+@-webkit-keyframes yuan1_out
+{
+    0%   {-webkit-transform: scale(1);opacity: 1}
+    20%  {-webkit-transform: scale(1.1);opacity: 0.8}
+    100% {-webkit-transform: scale(0.5);opacity: 0}
+}
+@-webkit-keyframes line3_out
+{
+    0%  {-webkit-transform: scale(0,1);}
+    50% {-webkit-transform: scale(1,1);}
+    100%{-webkit-transform: translate(-250px,0px) scale(1,1);}
+}
+@-webkit-keyframes line4_out
+{
+    0%  {-webkit-transform: scale(0,1);}
+    50% {-webkit-transform: scale(1,1);}
+    100%{-webkit-transform: translate(250px,0px) scale(1,1);}
+}
+@-webkit-keyframes yunduo
+{
+    0%  {-webkit-transform: translate(-50px,34px) scale(.4);opacity: 0}
+    10% {-webkit-transform: translate(-50px,34px) scale(.4);opacity: 1}
+    100%{-webkit-transform: translate(10px,-10px) scale(1);opacity: 0}
+}
+@-webkit-keyframes huoche
+{
+    from  {-webkit-transform: scale(1,1);}
+    to    {-webkit-transform: scale(1.02,0.95);}
+}
+@-webkit-keyframes huoche_in
+{
+    from  {opacity: 0;-webkit-transform: translate(0px,0px);}
+    to    {opacity: 1;-webkit-transform: translate(-42px,0px);}
+}
+@-webkit-keyframes word1_in
+{
+    from  {opacity: 0;-webkit-transform: scale(0.8);}
+    to    {opacity: 1;-webkit-transform: scale(1);}
+}
+@-webkit-keyframes word1_out
+{
+    from  {opacity: 1;-webkit-transform: scale(1);}
+    to    {opacity: 0;-webkit-transform: scale(.8);}
+}
+@-webkit-keyframes div1h_in
+{
+    0%   {-webkit-transform: translate(0px,0px);opacity: 0;}
+    50%  {-webkit-transform: translate(-30px,0px);opacity: 1}
+    100% {-webkit-transform: translate(-60px,0px);opacity: 1}
+}
+@-webkit-keyframes div1h_out
+{
+    from  {-webkit-transform: translate(-60px,0px);opacity: 1}
+    to    {-webkit-transform: translate(-90px,0px);opacity: 0}
+}
+@-webkit-keyframes huoche_out
+{
+    from  {opacity: 1;-webkit-transform: translate(-42px,0px);}
+    to    {opacity: 0;-webkit-transform: translate(-80px,0px);}
+}
+@-webkit-keyframes div1v_in
+{
+    0%  {-webkit-transform: translate(0px,0px);opacity: 0}
+    50% {-webkit-transform: translate(-10px,0px);opacity: 1}
+    100%{-webkit-transform: translate(-20px,0px);opacity: 1}
+}
+@-webkit-keyframes div1v_out
+{
+    from  {-webkit-transform: translate(-20px,0px);opacity: 1}
+    to    {-webkit-transform: translate(-30px,0px);opacity: 0;}
+}
+@-webkit-keyframes div2v_in
+{
+    from  {-webkit-transform: scale(1.1);opacity: 0}
+    to    {-webkit-transform: scale(1);opacity: 1}
+}
+@-webkit-keyframes feiji_in
+{
+    from  {-webkit-transform: translate(102px,58px) rotate(-17deg) scale(.5);opacity: 1}
+    to    {-webkit-transform: translate(0px,0px) rotate(0deg) scale(1);opacity: 1}
+}
+@-webkit-keyframes fadeinyun
+{
+    from  {opacity: 1;-webkit-transform: scale(0.6);}
+    to    {opacity: 1;-webkit-transform: scale(1);}
+}
+@-webkit-keyframes yun_out
+{
+    0%   {opacity: 1;-webkit-transform: scale(1);}
+    30%  {opacity: 1;-webkit-transform: scale(1.1);}
+    100% {opacity: 0;-webkit-transform: scale(0.6);}
+}
+@-webkit-keyframes feiji_out
+{
+    0%  {-webkit-transform: translate(0px,0px) rotate(0deg) scale(1);opacity: 1;}
+    100%{-webkit-transform: translate(-150px,-150px) rotate(0deg) scale(1);opacity: 1}
+}
+@-webkit-keyframes word3_in
+{
+    0%  {-webkit-transform: scale(.5);opacity: 0}
+    70% {-webkit-transform: scale(1.1);opacity: 1}
+    100%{-webkit-transform: scale(1);opacity: 1}
+}
+@-webkit-keyframes word3_out
+{
+    0%  {-webkit-transform: scale(1);opacity: 1}
+    30% {-webkit-transform: scale(1.1);opacity: 1}
+    100%{-webkit-transform: scale(.5);opacity: 0}
+}
+@-webkit-keyframes word4_in
+{
+    from  {opacity: 0;-webkit-transform: scale(1.2);}
+    to    {opacity: 1;-webkit-transform: scale(1);}
+}
+@-webkit-keyframes word4_out
+{
+    from  {opacity: 1;-webkit-transform: scale(1);}
+    to    {opacity: 0;-webkit-transform: scale(1.2);}
+}
+@-webkit-keyframes zixingche_in
+{
+    from  {opacity: 1;-webkit-transform: translate(50px,0px);}
+    to    {opacity: 1;-webkit-transform: translate(0px,0px);}
+}
+@-webkit-keyframes zixingche_out
+{
+    from  {opacity: 1;-webkit-transform: translate(0px,0px);}
+    to    {opacity: 0;-webkit-transform: translate(-30px,0px);}
+}
+@-webkit-keyframes lupai_in
+{
+    from  {opacity: 1;-webkit-transform: rotate(-90deg);}
+    to    {opacity: 1;-webkit-transform: rotate(0deg);}
+}
+@-webkit-keyframes lupai_out
+{
+    from  {opacity: 1;-webkit-transform: rotate(0deg);}
+    to    {opacity: 0;-webkit-transform: rotate(-90deg);}
+}
+@-webkit-keyframes chibangmove
+{
+    from  {-webkit-transform: scale(1,1);}
+    to    {-webkit-transform: scale(0.3,1);}
+}
+@-webkit-keyframes chibangmove1
+{
+    from  {-webkit-transform: scale(-1,1);}
+    to    {-webkit-transform: scale(-0.3,1);}
+}
+@-webkit-keyframes aixin2
+{
+    from  {-webkit-transform: translate(87px,82px) rotate(-41deg) scale(.8);opacity: 0}
+    to    {-webkit-transform: translate(60px,51px) rotate(-21deg) scale(.7);opacity: 1}
+}
+@-webkit-keyframes aixin2_out
+{
+    from  {-webkit-transform: translate(60px,51px) rotate(-21deg) scale(.7);opacity: 1}
+    to    {-webkit-transform: translate(100px,-45px) rotate(1deg) scale(.7);opacity: 1}
+}
+@-webkit-keyframes aixin1
+{
+    from  {-webkit-transform: translate(-32px,113px) rotate(40deg) scale(0.7);opacity: 0}
+    to    {-webkit-transform: translate(-10px,76px) rotate(32deg) scale(0.8);opacity: 1}
+}
+@-webkit-keyframes aixin1_out
+{
+    from  {-webkit-transform: translate(-10px,76px) rotate(32deg) scale(0.8);opacity: 1}
+    to    {-webkit-transform: translate(-10px,-44px) rotate(3deg) scale(0.8);opacity: 1}
+}
+@-webkit-keyframes word5_in
+{
+    from  {opacity: 0;-webkit-transform: rotate(-90deg);}
+    to    {opacity: 1;-webkit-transform: rotate(0deg);}
+}
+@-webkit-keyframes word5_out
+{
+    from  {opacity: 1;-webkit-transform: rotate(0deg) scale(1);}
+    to    {opacity: 0;-webkit-transform: rotate(90deg) scale(1.3);}
+}
+@-webkit-keyframes div5_in
+{
+    from  {-webkit-transform: scale(1.05);opacity: 0}
+    to    {-webkit-transform: scale(1);opacity: 1}
+}
+@-webkit-keyframes div5_out
+{
+    from  {-webkit-transform: translate(0px,0px) scale(1);opacity: 1}
+    to    {-webkit-transform: translate(-30px,-30px) scale(1);opacity: 0}
+}
+</style>
+<div id='container'>
+    <img src='assets/2016bg.jpg'>
+
+    <img id='line1' src='assets/jiang2.png'>
+    <img id='line2' src='assets/jiang2.png'>
+
+    <div id='line3'></div>
+    <div id='line4'></div>
+
+    <img id='yuan' src='assets/jiang.png'>
+    <img id='yuan1' src='assets/jiang1.png'>
+
+    <div id='div1h' style='display:none'>
+        <img id='img1h' style='position:absolute'>
+        <span id='word1h' class='showwords'></span>
+    </div>
+    <div id='div1v' style='display:none'>
+        <img id='img1v' style='position:absolute'>
+        <span id='word1v' class='showwords'></span>
+    </div>
+
+    <div id='div2v' style='display:none'>
+        <img id='img2v' style='position:absolute'>
+        <span id='word2v' class='showwords'></span>
+    </div>
+    <div id='div2h' style='display:none'>
+        <img id='img2h' style='position:absolute'>
+        <span id='word2h' class='showwords'></span>
+    </div>
+
+    <div id='div3v' style='display:none'>
+        <img id='img3v' style='position:absolute'>
+        <span id='word3v' class='showwords'></span>
+    </div>
+    <div id='div3h' style='display:none'>
+        <img id='img3h' style='position:absolute'>
+        <span id='word3h' class='showwords'></span>
+    </div>
+
+    <div id='div4h' style='display:none'>
+        <img id='img4h' style='position:absolute'>
+        <span id='word4h' class='showwords'></span>
+    </div>
+    <div id='div4v' style='display:none'>
+        <img id='img4v' style='position:absolute'>
+        <span id='word4v' class='showwords'></span>
+    </div>
+
+    <div id='div5v' style='display:none'>
+        <img id='img5v' style='position:absolute'>
+        <span id='word5v' class='showwords'></span>
+    </div>
+    <div id='div5h' style='display:none'>
+        <img id='img5h' style='position:absolute'>
+        <span id='word5h' class='showwords'></span>
+    </div>
+
+    <img id='word1' src='assets/zlan.png'>
+    <div id='huochediv'>
+        <img id='huoche' src='assets/zlan1.png'>
+        <img id='yun' src='assets/zlan2.png'>
+        <img id='yun1' src='assets/zlan2.png'>
+    </div>
+
+    <img id='word2' src='assets/huang.png'>
+    <div id='feijidiv'>
+        <img id='yun2' src='assets/huang4.png'>
+        <img id='yun3' src='assets/huang4.png'>
+        <img id='feiji' src='assets/guang1.png'>
+        <img id='feijixian' src='assets/guang2.png'>
+        <img id='yun4' src='assets/huang3.png'>
+    </div>
+
+    <img id='word3' src='assets/lv.png'>
+    <img id='jiaozi' src='assets/lv3.png'>
+
+    <img id='word4' src='assets/zi.png'>
+    <img id='zixingche' src='assets/zi2.png'>
+    <img id='lupai' src='assets/zi3.png'>
+
+    <img id="word5" src="assets/lan.png" style="left: 330px;top: 546px;opacity:0;">
+    <div id='aixin1'>
+        <img src="assets/chibang.png" style="left: 97px;-webkit-transform-origin: 0% 35%;top: 0px;position: absolute;-webkit-animation: chibangmove 0.4s linear infinite alternate">
+        <img src="assets/chibang.png" style="-webkit-transform-origin: 0% 35%;-webkit-transform: scale(-1,1);left: 51px;top: 0px;position: absolute;-webkit-animation: chibangmove1 0.4s linear infinite alternate">
+        <img src="assets/xin.png" style="left: 50px;top: 0px;width: 50px;position:absolute">
+    </div>
+    <div id='aixin2'>
+        <img src="assets/chibang.png" style="left: 97px;-webkit-transform-origin: 0% 35%;top: 0px;position: absolute;-webkit-animation: chibangmove 0.4s linear infinite alternate">
+        <img src="assets/chibang.png" style="-webkit-transform-origin: 0% 35%;-webkit-transform: scale(-1,1);left: 51px;top: 0px;position: absolute;-webkit-animation: chibangmove1 0.4s linear infinite alternate">
+        <img src="assets/xin.png" style="left: 50px;top: 0px;width: 50px;position:absolute">
+    </div>
+
+    <img src='assets/2016.png'>
+    <div id='pagetitle' style='position:absolute;width:178px;height:110px;top:274px;left:166px;font-size:22px;overflow:hidden;color:#fff'>
+        <div style='position:absolute;width:178px;height:110px;top:0px;left:0px;overflow:hidden;'>
+            <div style='position:absolute;width:178px;height:110px;display:table;overflow:hidden;'>
+                <div id='titlecontent' style='width:178px;height:110px;vertical-align:middle;display:table-cell;text-align:center;'></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+var image_size_width=[];
+var image_size_height=[];
+var image_url_index=0;
+var have_num = 0;
+var error_num = 0;
+var canshow = true;
+var reshow = false;
+var delaytime=5000;
+var timeout0;
+var timeout1;
+var timeout2;
+var timeout3;
+var timeout4;
+var timeout5;
+var timeout6;
+var timeout7;
+
+var get_pid = function(url){
+    var index1 = url.indexOf("?");
+    if(index1 != -1)
+    {
+        url = url.substr(0, index1);
+    }
+    return url.toString().substr(url.lastIndexOf("/") + 1);
+}
+
+function id(name)
+{
+    return document.getElementById(name);
+}
+function load_images()
+{
+    reshow = false;
+    image_size_width=[];
+    image_size_height=[];
+    Onload_imgs_url=[];
+    image_url_index=0;
+    have_num = 0;
+    error_num = 0;
+    begin_titletime = new Date();
+    begin_titletime = begin_titletime.getTime();
+    canshow = true;
+    showtitle();
+
+    bl_keepload = 'first';
+    step_load();
+     
+}
+//每次执行加载后5张图片
+var bl_keepload = 'first';
+var step_loadnum = 5;
+function step_load()
+{
+    var load_num = 0
+    //初步加载X张
+    if(image_url_index  == 0 && bl_keepload == 'first')
+    {
+        console.log('loading continue');
+        if(slider_images_url.length > step_loadnum)
+        {
+            load_num = step_loadnum;
+            bl_keepload = 'next';
+        }
+        else
+        {
+            load_num = slider_images_url.length;
+            bl_keepload = 'end';
+        }
+        for(var i = 0; i< load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+    else if(bl_keepload == 'end')
+    {
+        return;
+    }
+    else
+    {
+         // console.log('loading continue');
+        if(slider_images_url.length - image_url_index >step_loadnum*2)
+        { 
+            load_num = step_loadnum;
+        }
+        else
+        {
+            load_num = slider_images_url.length - image_url_index - step_loadnum;
+            bl_keepload = 'end';
+        }
+        for(var i = image_url_index +step_loadnum; i< image_url_index + step_loadnum + load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+}
+function image_onerror(event)
+{
+    var img = event.target;
+    var index = img.index;
+    if(index<step_loadnum)
+        error_num ++;
+    Onload_imgs_url[index] = 'not find';
+    console.log(Onload_imgs_url[index]);
+    // console.log(have_num + '-' + error_num);
+    if((have_num+error_num >= step_loadnum || slider_images_url.length == (have_num+error_num)) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        if(have_num == 0)
+            return;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout0 = setTimeout(function()
+                {
+                    distitle();
+                },dis_titletime);
+        }
+    }
+}
+
+function image_onload(event)
+{
+    if(reshow == true)
+        return;
+
+    var img = event.target;
+    var index = img.index;
+
+    if(index<step_loadnum)
+    {
+        have_num++;
+    }
+    Onload_imgs_url[index] = img.src;
+    image_size_height[index] = img.height;
+    image_size_width[index] = img.width;
+
+    console.log(Onload_imgs_url[index]);
+    // console.log(have_num + '-' + error_num);
+
+    if((have_num + error_num >= step_loadnum ||slider_images_url.length == (have_num+error_num)) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        if(have_num == 0)
+            return;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout0 = setTimeout(function()
+                {
+                    distitle();
+                },dis_titletime);
+        }
+
+    }
+}
+function id(name)
+{
+    return document.getElementById(name);
+}
+
+function showtitle()
+{
+    id('line1').style.webkitAnimation = 'line1_in 1.5s linear both';
+    id('line2').style.webkitAnimation = 'line2_in 1.5s linear both';
+
+    id('yuan').style.webkitAnimation = 'yuan_in 0.6s 1s ease-out both';
+    id('yuan1').style.webkitAnimation = 'fadein 0.4s 1.4s linear both';
+    id('pagetitle').style.webkitAnimation = 'fadein 0.7s 1.6s linear both';
+    id('titlecontent').innerHTML = e_desc;
+
+}
+
+function distitle()
+{
+    id('pagetitle').style.webkitAnimation = 'title_out 0.3s linear both';
+    id('yuan1').style.webkitAnimation = 'yuan1_out 0.3s linear 0.2s both';
+    id('yuan').style.webkitAnimation = 'yuan_out 0.8s ease-out 0.3s both';
+
+    id('line3').style.webkitAnimation = 'line3_out 1s linear 0.5s both';
+    id('line4').style.webkitAnimation = 'line4_out 1s linear 0.5s both';
+
+    timeout1 = setTimeout(show1,1000)
+}
+function show1()
+{
+    setImage('1');
+    id('word1').style.webkitAnimation = 'word1_in 0.8s linear both';
+    id('huochediv').style.webkitAnimation = 'huoche_in 1s ease-out both';
+
+    id('div1h').style.webkitAnimation = 'div1h_in 4s cubic-bezier(.28,.41,.81,.99) both';
+    id('div1v').style.webkitAnimation = 'div1v_in 4s linear both';
+
+    timeout2 = setTimeout(show2,5000)
+}
+
+function show2()
+{
+    setImage('2');
+    id('word1').style.webkitAnimation = 'word1_out 0.8s linear both';
+    id('huochediv').style.webkitAnimation = 'huoche_out 0.8s linear both';
+
+    id('div1h').style.webkitAnimation = 'div1h_out 1s ease-in both';
+    id('div1v').style.webkitAnimation = 'div1v_out 1s ease-in both';
+
+    id('word2').style.webkitAnimation = 'fadein 0.8s 0.2s linear both';
+
+    id('div2v').style.webkitAnimation = 'div2v_in 1s 0.2s linear both';
+    id('div2h').style.webkitAnimation = 'div2v_in 1s 0.2s linear both';
+
+    id('yun2').style.webkitAnimation = 'fadeinyun 0.3s 1.4s linear forwards';
+    id('yun3').style.webkitAnimation = 'fadeinyun 0.3s 1.2s linear forwards';
+    id('yun4').style.webkitAnimation = 'fadeinyun 0.3s 1s linear forwards';
+    id('feiji').style.webkitAnimation = 'feiji_in 0.5s 1.2s ease-out forwards';
+    id('feijixian').style.webkitAnimation = 'fadein 0.5s 1s linear both';
+
+    timeout3 = setTimeout(show3,5000)
+}
+
+function show3()
+{
+    setImage('3');
+    id('yun2').style.webkitAnimation = 'yun_out 0.5s linear both';
+    id('yun3').style.webkitAnimation = 'yun_out 0.5s linear both';
+    id('yun4').style.webkitAnimation = 'yun_out 0.5s linear both';
+    id('feiji').style.webkitAnimation = 'feiji_out 1s 0.5s linear both';
+    id('feijixian').style.webkitAnimation = 'fadeout 1s linear both';
+    id('word2').style.webkitAnimation = 'fadeout 0.8s 0.3s linear both';
+
+    id('div2v').style.webkitAnimation = 'fadeout 1s linear both';
+    id('div2h').style.webkitAnimation = 'fadeout 1s linear both';
+
+    id('word3').style.webkitAnimation = 'word3_in 1s 0.4s linear both';
+    id('jiaozi').style.webkitAnimation = 'word3_in 1s 0.4s linear both';
+
+    id('div3h').style.webkitAnimation = 'fadein 1s 0.4s linear both';
+    id('div3v').style.webkitAnimation = 'fadein 1s 0.4s linear both';
+
+    timeout4 = setTimeout(show4,5000)
+}
+function show4()
+{
+    setImage('4');
+    id('word3').style.webkitAnimation = 'word3_out 0.8s linear both';
+    id('jiaozi').style.webkitAnimation = 'word3_out 0.8s linear both';
+
+    id('div3h').style.webkitAnimation = 'fadeout 1s linear both';
+    id('div3v').style.webkitAnimation = 'fadeout 1s linear both';
+
+    id('word4').style.webkitAnimation = 'word4_in 0.8s 0.3s linear both';
+    id('zixingche').style.webkitAnimation = 'zixingche_in 1s 0.3s ease-out forwards';
+    id('lupai').style.webkitAnimation = 'lupai_in 1s 0.3s ease-out forwards';
+
+    id('div4h').style.webkitAnimation = 'div1h_in 4s cubic-bezier(.28,.41,.81,.99) both';
+    id('div4v').style.webkitAnimation = 'div1v_in 4s linear both';
+
+
+    timeout5 = setTimeout(show5,5000)
+}
+function show5()
+{
+    setImage('5');
+    id('div4h').style.webkitAnimation = 'div1h_out 1s ease-in both';
+    id('div4v').style.webkitAnimation = 'div1v_out 1s ease-in both';
+    id('word4').style.webkitAnimation = 'word4_out 1s linear both';
+    id('zixingche').style.webkitAnimation = 'zixingche_out 1s linear both';
+    id('lupai').style.webkitAnimation = 'lupai_out 1s linear both';
+
+    id('aixin1').style.webkitAnimation = 'aixin1 1s 0.5s linear both';
+    id('aixin2').style.webkitAnimation = 'aixin2 1s 0.5s linear both';
+    id('word5').style.webkitAnimation = 'word5_in 1s 0.5s ease-out both';
+
+    id('div5v').style.webkitAnimation = 'div5_in 1s 0.5s ease-out both';
+    id('div5h').style.webkitAnimation = 'div5_in 1s 0.5s ease-out both';
+
+    timeout6 = setTimeout(show1_1,5000)
+}
+function show1_1()
+{
+    setImage('1');
+    id('div5v').style.webkitAnimation = 'div5_out 1s ease-out both';
+    id('div5h').style.webkitAnimation = 'div5_out 1s ease-out both';
+
+    id('aixin1').style.webkitAnimation = 'aixin1_out 1s linear both';
+    id('aixin2').style.webkitAnimation = 'aixin2_out 1s linear both';
+
+    id('word5').style.webkitAnimation = 'word5_out 1s linear both';
+
+    id('word1').style.webkitAnimation = 'word1_in 0.8s linear both';
+    id('huochediv').style.webkitAnimation = 'huoche_in 1s ease-out both';
+
+    id('div1h').style.webkitAnimation = 'div1h_in 4s cubic-bezier(.28,.41,.81,.99) both';
+    id('div1v').style.webkitAnimation = 'div1v_in 4s linear both';
+    id('div2h').style.webkitAnimation = '';
+    id('div3v').style.webkitAnimation = '';
+    id('div4v').style.webkitAnimation = '';
+    id('div2v').style.webkitAnimation = '';
+    id('div3h').style.webkitAnimation = '';
+    id('div4h').style.webkitAnimation = '';
+
+    timeout7 = setTimeout(show2,5000)
+}
+var divwidth = {'1h':550,'1v':490,'2h':500,'2v':500,'3h':500,'3v':500,'4h':550,'4v':490,'5h':530,'5v':530};
+var divheight = {'1h':400,'1v':750,'2h':350,'2v':780,'3h':350,'3v':780,'4h':400,'4v':750,'5h':353,'5v':800};
+
+var get_pid = function(url){
+    var index1 = url.indexOf("?");
+    if(index1 != -1)
+    {
+        url = url.substr(0, index1);
+    }
+    return url.toString().substr(url.lastIndexOf("/") + 1);
+}
+
+function insertEnter(str,n){
+    var len = str.length;
+    var strTemp = '';
+    if(len > n){
+    strTemp = str.substring(0,n);
+    str = str.substring(n,len);
+    return strTemp+'\n'+str;
+    }else{
+    return str;
+    }
+}
+
+function setImage(idname)
+{
+    if(reshow == true)
+        return;
+
+    while(Onload_imgs_url[image_url_index] == 'not find' || Onload_imgs_url[image_url_index] == 'loading')
+    {
+        if(image_url_index % step_loadnum == 0)
+        {
+            step_load();
+        }
+        console.log(Onload_imgs_url[image_url_index]);
+        image_url_index++;
+        if(image_url_index == Onload_imgs_url.length)
+            image_url_index = 0;
+    }
+
+    if(image_url_index % step_loadnum == 0)
+    {
+        step_load();
+    }
+    console.log('setimg:' + Onload_imgs_url[image_url_index]);
+
+    var img_bili = image_size_width[image_url_index]/image_size_height[image_url_index];
+    var div;
+    var div1;
+    var divname;
+    var word;
+
+    if(img_bili > 1)
+    {
+        divname = idname + 'h';
+        div = id('div'+idname+'h');
+        div1 = id('div'+idname+'v');
+        word = id('word' + divname);
+        word.style.top = "85%";
+
+    }
+    else   //竖
+    {
+        divname = idname + 'v';
+        div = id('div'+idname+'v');
+        div1 = id('div'+idname+'h');
+        word = id('word' + divname);
+        word.style.top = "75%";
+
+    }
+
+    div.style.display = 'block';
+    div1.style.display = 'none';
+
+
+    var height = divheight[divname];
+    var width = divwidth[divname];
+
+    // var word = id('word' + divname);
+    var word_string = words[get_pid(Onload_imgs_url[image_url_index])];
+    if(word_string != undefined)
+    { 
+        word_string = word_string.replace(/[\n]/ig,'');  
+        
+        var word_length = word_string.length;
+        if(word_length <= 4)
+        {
+            word.style.fontSize = "33px";
+        }else {
+            word.style.fontSize = "30px";
+            if(word_length > 10)
+                word_string = insertEnter(word_string, 5);
+        }
+        word.innerText = word_string;
+    }
+    else
+    {
+        word.innerText = "";
+    }
+
+    var img = id('img'+divname);
+    img.src = Onload_imgs_url[image_url_index];
+    console.log(img.src);
+
+    if(img_bili > (width/height))
+    {
+        img.style.top = '0px';
+        img.style.height = height + 'px';
+        img.style.width = height*img_bili + 'px';
+        img.style.left = -((height*img_bili-width)/2)+'px';
+    }
+    else
+    {
+        img.style.left = '0px';
+        img.style.width = width+'px';
+        img.style.height = width/img_bili + 'px';
+        img.style.top = -((width/img_bili-height)/2) + 'px';
+    }
+    image_url_index++;
+    if(image_url_index == Onload_imgs_url.length)
+        image_url_index = 0;
+    
+    console.log(image_url_index);
+    // console.log(width,height,img.style.left,img.style.top,img.width,img.height);
+}
+call_me(load_images);
+function reload_scene()
+{
+    clearnode();
+    reshow = true;
+    setTimeout(load_images,100);
+}
+
+function clearnode()
+{
+    id('line1').style.webkitAnimation = '';
+    id('line2').style.webkitAnimation = '';
+    id('line3').style.webkitAnimation = '';
+    id('line4').style.webkitAnimation = '';
+    id('yuan').style.webkitAnimation = '';
+    id('yuan1').style.webkitAnimation = '';
+    id('pagetitle').style.webkitAnimation = '';
+
+    id('div1h').style.webkitAnimation = '';
+    id('div1v').style.webkitAnimation = '';
+    id('div2h').style.webkitAnimation = '';
+    id('div2v').style.webkitAnimation = '';
+    id('div3h').style.webkitAnimation = '';
+    id('div3v').style.webkitAnimation = '';
+    id('div4h').style.webkitAnimation = '';
+    id('div4v').style.webkitAnimation = '';
+    id('div5h').style.webkitAnimation = '';
+    id('div5v').style.webkitAnimation = '';
+    id('div1h').style.display = 'none';
+    id('div1v').style.display = 'none';
+    id('div2h').style.display = 'none';
+    id('div2v').style.display = 'none';
+    id('div3h').style.display = 'none';
+    id('div3v').style.display = 'none';
+    id('div4h').style.display = 'none';
+    id('div4v').style.display = 'none';
+    id('div5h').style.display = 'none';
+    id('div5v').style.display = 'none';
+    id('word1').style.webkitAnimation = '';
+    id('word2').style.webkitAnimation = '';
+    id('word3').style.webkitAnimation = '';
+    id('word4').style.webkitAnimation = '';
+    id('word5').style.webkitAnimation = '';
+    id('aixin1').style.webkitAnimation = '';
+    id('aixin2').style.webkitAnimation = '';
+    id('huochediv').style.webkitAnimation = '';
+    id('zixingche').style.webkitAnimation = '';
+    id('lupai').style.webkitAnimation = '';
+    id('jiaozi').style.webkitAnimation = '';
+    id('feiji').style.webkitAnimation = '';
+    id('feijixian').style.webkitAnimation = '';
+
+    clearTimeout(timeout0);
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+    clearTimeout(timeout3);
+    clearTimeout(timeout4);
+    clearTimeout(timeout5);
+    clearTimeout(timeout6);
+    clearTimeout(timeout7);
+}
+
+
+        if(typeof(objid) === "undefined")
+        {
+            var objid = function(id)
+            {
+                return document.getElementById(id);
+            }
+        }
+
+
+        function on_wx_music_init()
+        {
+            if(e_desc != "")
+            {
+                document.title = e_desc.replace("<br>", "\n").replace("<br/>", "\n");;
+            }
+            else
+            {
+                document.title = "音乐相册";
+            }
+            loadingdiv_out();
+            create_music();
+
+
+        }
+
+
+
+
+        call_me(on_wx_music_init);
+
+        //音乐播放
+
+        var music_header   = 'http://kawaweika.qiniudn.com/sound/';
+        var e_music_player = new Audio();
+
+        function play_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+
+            if(e_music_url.indexOf('qqmusic') != -1)
+            {
+                mymusic = 'https://qnphoto.kagirl.cn/music/688042.m4a';
+            }
+            else
+            {
+                mymusic = e_music_url;
+            }
+
+            e_music_player.src  = mymusic;
+            e_music_player.loop = 'loop';
+
+
+            e_music_player.onerror = function(){
+                if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                {
+                    var url = e_music_url.replace("http://sound.kagirl.net", "https://music.kagirl.cn");
+                }
+                else
+                {
+                    var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                }
+
+                e_music_player.src = url;
+                e_music_player.play();
+                e_music_player.onerror = null;
+            }
+            
+            e_music_player.play();
+            
+            //检查音乐是否缓冲成功
+            setTimeout(function()
+            {
+                var timeRanges = e_music_player.buffered;
+                var timeBuffered = timeRanges.end(timeRanges.length - 1);
+                var bufferPercent = timeBuffered /e_music_player.duration; 
+                
+
+                if(isNaN(bufferPercent) || bufferPercent == 0)
+                {
+                    if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                    {
+                        var url = e_music_url.replace("http://sound.kagirl.net", "http://kawaweika.qiniudn.com");
+                    }
+                    else
+                    {
+                        var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                    }
+                    e_music_player.src = url;
+                    e_music_player.play();
+                }
+            },5000);
+
+
+            if(objid('sound_image'))
+            {
+                objid('sound_image').style.webkitAnimation     = "zhuan 3s linear infinite";
+            }
+            
+            bplay = 1;
+        }
+
+        function create_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+            
+            play_music();
+
+            sound_div = document.createElement("div");
+            sound_div.setAttribute("ID", "cardsound");
+            sound_div.style.cssText = "position:fixed;right:20px;top:25px;z-index:50;visibility:visible;";
+            sound_div.onclick = switchsound;
+
+            bg_htm  = "<img id='sound_image' src='assets/music_note_big.png' style='-webkit-animation:zhuan 3s linear infinite'>";
+            txt_htm = "<div id='music_txt' style='color:white;position:absolute;left:-40px;top:30px;width:60px'></div>"
+
+            sound_div.innerHTML = bg_htm  + txt_htm;
+
+            document.body.appendChild(sound_div);
+        } 
+
+        var bplay = 0;              
+        
+        function switchsound()
+        {
+            au = e_music_player;
+            ai = objid('sound_image');
+            if(au.paused)
+            {
+                bplay = 1;
+                au.play();
+                ai.style.webkitAnimation     = "zhuan 3s linear infinite";
+                objid("music_txt").innerHTML = "打开";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+            else
+            {
+                bplay = 0;
+                au.pause();
+                ai.style.webkitAnimation     = "";
+                objid("music_txt").innerHTML = "关闭";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+        }
+
+    function loadingdiv_out()
+    {
+        objid('loadingdiv').style.webkitAnimation = 'fadeout 0.3s linear both';
+        if(navigator.userAgent.indexOf('Windows Phone')!=1)
+        {
+            objid('loadingdiv').style.display = 'none';
+        }
+
+        setTimeout(function()
+        {
+            objid('loadingdiv').style.display = 'none';
+        },400)
+    }
+    
+    </script>
+
+
+
+<div id='loadingdiv'>
+    <div class='loadingword'>相册正在加载中<br>请稍等……</div>
+</div>
+

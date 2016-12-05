@@ -1,0 +1,1365 @@
+<!doctype html>
+<meta charset='utf-8'>
+        <script>
+        function init_viewport()
+        {
+            if(/Android (\d+\.\d+)/.test(navigator.userAgent))
+            {
+                var version = parseFloat(RegExp.$1);
+
+                if(version>2.3)
+                {
+                    var width = window.outerWidth == 0 ? window.screen.width : window.outerWidth;
+                    var phoneScale = parseInt(width)/500;
+                    document.write('<meta name="viewport" content="width=500, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +', target-densitydpi=device-dpi">');
+                }
+                else
+                {
+                    document.write('<meta name="viewport" content="width=500, target-densitydpi=device-dpi">');    
+                }
+            }
+            else if(navigator.userAgent.indexOf('iPhone') != -1)
+            {
+                var phoneScale = parseInt(window.screen.width)/500;
+                document.write('<meta name="viewport" content="width=500; min-height=750;initial-scale=' + phoneScale +'; user-scalable=no;" /> ');         //0.75   0.82
+            }
+            else 
+            {
+                document.write('<meta name="viewport" content="width=500, height=750, initial-scale=0.64" /> ');         //0.75   0.82
+
+            }
+        }
+        init_viewport();
+            document.ontouchmove = function(e)
+            {
+                e.preventDefault();
+            } 
+
+            var module_inits = [];
+
+            var upload_permission = true;
+            var atkname = 'zqyy';
+
+            
+            function load_init_modules()
+            {
+                for(var i=0; i<module_inits.length; i++)
+                {
+                    module_inits[i]();
+                }
+            }
+
+            function call_me(fun)
+            {
+                module_inits.push(fun);
+            }
+
+            onload = load_init_modules;
+
+
+var slider_images_url = [];
+slider_images_url.push('photo/xa_267599007881.jpg');
+slider_images_url.push('photo/xa_267599016833.jpg');
+slider_images_url.push('photo/xa_267599035564.jpg');
+slider_images_url.push('photo/xa_267599023379.jpg');
+slider_images_url.push('photo/xa_267603757659.jpg');
+slider_images_url.push('photo/xa_267603772294.jpg');
+slider_images_url.push('photo/xa_267603781415.jpg');
+slider_images_url.push('photo/xa_267603795392.jpg');
+slider_images_url.push('photo/xa_267603819135.jpg');
+slider_images_url.push('photo/xa_267603826507.jpg');
+slider_images_url.push('photo/xa_267603834332.jpg');
+slider_images_url.push('photo/xa_267603867192.jpg');
+slider_images_url.push('photo/xa_267607274164.jpg');
+slider_images_url.push('photo/xa_267607299024.jpg');
+slider_images_url.push('photo/xa_267607308292.jpg');
+slider_images_url.push('photo/xa_267607316935.jpg');
+slider_images_url.push('photo/xa_267607333176.jpg');
+slider_images_url.push('photo/xa_267607349352.jpg');
+slider_images_url.push('photo/xa_267607354893.jpg');
+slider_images_url.push('photo/xa_268737043842.jpg');
+slider_images_url.push('photo/xa_267610525912.jpg');
+slider_images_url.push('photo/xa_267610543598.jpg');
+slider_images_url.push('photo/xa_267610552742.jpg');
+slider_images_url.push('photo/xa_267610578118.jpg');
+slider_images_url.push('photo/xa_267610566822.jpg');
+slider_images_url.push('photo/xa_267610629454.jpg');
+slider_images_url.push('photo/xa_267610595067.jpg');
+slider_images_url.push('photo/xa_267610615048.jpg');
+slider_images_url.push('photo/xa_267615566792.jpg');
+slider_images_url.push('photo/xa_267615553709.jpg');
+slider_images_url.push('photo/xa_267615601400.jpg');
+slider_images_url.push('photo/xa_267615618713.jpg');
+slider_images_url.push('photo/xa_267617055282.jpg');
+slider_images_url.push('photo/xa_267617061553.jpg');
+slider_images_url.push('photo/xa_267617093001.jpg');
+slider_images_url.push('photo/xa_267617088352.jpg');
+slider_images_url.push('photo/xa_267617116197.jpg');
+slider_images_url.push('photo/xa_267617153628.jpg');
+slider_images_url.push('photo/xa_267617131949.jpg');
+slider_images_url.push('photo/xa_267617147683.jpg');
+slider_images_url.push('photo/xa_267622366978.jpg');
+slider_images_url.push('photo/xa_268442983730.jpg');
+slider_images_url.push('photo/xa_267622376718.jpg');
+slider_images_url.push('photo/xa_267617161436.jpg');
+slider_images_url.push('photo/xa_267622397517.jpg');
+slider_images_url.push('photo/xa_267622388079.jpg');
+slider_images_url.push('photo/xa_267622413499.jpg');
+slider_images_url.push('photo/xa_267622422347.jpg');
+slider_images_url.push('photo/xa_267622435950.jpg');
+slider_images_url.push('photo/xa_267622448687.jpg');
+slider_images_url.push('photo/xa_267622404961.jpg');
+slider_images_url.push('photo/xa_267627092967.jpg');
+slider_images_url.push('photo/xa_267627105754.jpg');
+slider_images_url.push('photo/xa_267627111013.jpg');
+slider_images_url.push('photo/xa_268767521472.jpg');
+slider_images_url.push('photo/xa_267627135077.jpg');
+slider_images_url.push('photo/xa_268442979621.jpg');
+slider_images_url.push('photo/xa_268443806639.jpg');
+slider_images_url.push('photo/xa_268443798678.jpg');
+slider_images_url.push('photo/xa_267627154976.jpg');
+slider_images_url.push('photo/xa_267627147956.jpg');
+slider_images_url.push('photo/xa_268966679713.jpg');
+slider_images_url.push('photo/xa_267635441155.jpg');
+slider_images_url.push('photo/xa_267635454820.jpg');
+slider_images_url.push('photo/xa_267635475143.jpg');
+slider_images_url.push('photo/xa_267635481911.jpg');
+slider_images_url.push('photo/xa_267635517682.jpg');
+slider_images_url.push('photo/xa_267635498640.jpg');
+slider_images_url.push('photo/xa_267635505281.jpg');
+slider_images_url.push('photo/xa_267635536176.jpg');
+slider_images_url.push('photo/xa_267639455432.jpg');
+slider_images_url.push('photo/xa_267941579832.jpg');
+slider_images_url.push('photo/xa_267639468122.jpg');
+slider_images_url.push('photo/xa_267635558180.jpg');
+slider_images_url.push('photo/xa_267639484012.jpg');
+slider_images_url.push('photo/xa_267639471870.jpg');
+slider_images_url.push('photo/xa_268486282166.jpg');
+slider_images_url.push('photo/xa_267941568947.jpg');
+slider_images_url.push('photo/xa_267639498939.jpg');
+slider_images_url.push('photo/xa_267639517258.jpg');
+slider_images_url.push('photo/xa_267963063242.jpg');
+var date = 20161128;
+var zan_num = 0;
+var e_bookid = 'Fpx5HcVlzcrgzqS3rxUhcBK14BTmAbTw';
+var e_desc = {"de":"\u620e\u9a6c\u60c5\u7f18\uff08\u4e00\uff09"}["de"];
+var e_openid = null;
+var e_scene = 'faya';
+var editmode = false;
+var wxid = 'xuanmeixc';
+var shareid = '';
+var guanzhu_url = 'http://mp.weixin.qq.com/s?__biz=MzIzMzE4Mzk4Mg==&mid=539739355&idx=1&sn=db9977de95a7a42b08c580297326425f#rd';
+var words = {"xa_267635558180":"1976\u5e74\u8c03\u5317\u4eac\u7a7a\u519b\u53f8\u4ee4\u90e8\u60c5\u62a5\u5904","xa_268767521472":"\u56db\u56e2\u7bee\u7403\u961f","xa_267607333176":"1969\u5e74\u8c03\u5357\u7a7a\u60c5\u62a5\u5904","xa_267639517258":"\u5168\u5bb6\u798f","xa_267610578118":"\u521d\u4e2d\u65f6\u4ee3","xa_267603772294":"\u4e8e\u6d59\u6c5f\u5609\u5174\u6388\u8854\u5217\u5175","xa_268737043842":"\u5f20\u71d51948\u5e74\u51fa\u751f\u56db\u5ddd","xa_267615601400":"1968\u5e74\u9ad8\u4e2d\u5e94\u5f81\u5165\u4f0d","xa_267599007881":"\u6211\u82cf\u4eae\u751f\u6c5f\u897f\u4eba1946\u5e741\u6708\u51fa\u751f","xa_267617055282":"\u5357\u4eac3723\u90e8\u961f","xa_267610615048":"\u5168\u5bb6\u798f","xa_267610566822":"\u9ad8\u4e2d\u65f6\u4ee3","xa_267610525912":"\u751f\u957f\u5728\u5317\u4eac","xa_267610552742":"\u59d0\u5f1f\u4e09\u4eba","xa_267963063242":"\u590d\u5458\u56de\u5317\u4eac","xa_267627111013":"\u56db\u56e2\u6587\u827a\u5ba3\u4f20\u961f","xa_267599016833":"\u6c5f\u897f\u7530\u7248\u4e2d\u5b66\u65f6\u7684\u540c\u5b66","xa_267603757659":"1964\u5e7411\u6708\u5e94\u5f81\u5165\u4f0d","xa_267639484012":"1976\u5e74\u513f\u5b50\u51fa\u751f","xa_267607299024":"1968\u5e74\u5357\u4eac\u6731\u5e84\u63d0\u5e72","xa_267610629454":"\u6587\u9769\u65f6\u4ee3"};
+var app = '';
+var e_music_url = 'assets/qq_584710.mp3';
+              var e_music_title = '';
+              var tbssaveoff = false;
+              var isguangchang = '';
+             </script>
+
+<style type="text/css">
+@-webkit-keyframes zhuan
+        {
+            0%
+            {
+                -webkit-transform:rotate(0deg);
+            }
+
+            100%
+            {
+                -webkit-transform:rotate(360deg);
+            }
+        }
+
+
+.showwords 
+{
+    font-size: 28px;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    top: 85%;
+    margin: -39px;
+    left: 39px;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+/*     background-color: rgba(255, 255, 255, 0.53);*/
+    text-shadow: 3px 3px 10px black, -3px -3px 10px black, 3px -3px 10px black, -3px 3px 10px black;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+    
+*
+{
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+}
+
+body
+{
+    background-color: black;
+}
+
+#container
+{
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+#container > div,#container > img
+{
+    position: absolute;
+}
+#ye1
+{
+    left: -42px;
+    top: -48px;
+    -webkit-transform-origin: 25% 0%;
+    -webkit-animation: yezi1 1.5s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ye2
+{
+    left: 178px;
+    top: -90px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-animation: yezi1 1.7s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ye3
+{
+    left: 294px;
+    top: -50px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-animation: yezi1 1.5s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ye4
+{
+    -webkit-transform: scale(-1,1);
+    -webkit-transform-origin: 25% 0%;
+    left: 451px;
+    top: -59px;
+    -webkit-animation: yezi2 1.8s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ye5
+{
+    left: -11px;
+    top: -50px;
+    -webkit-transform-origin: 50% 0%;
+    -webkit-animation: yezi1 2s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ya
+{
+    width: 97px;
+    height: 179px;
+    top: 546px;
+    left: 354px;
+    -webkit-transform-origin:100% 100%;
+    -webkit-animation: yezi3 4s cubic-bezier(.27,0,.78,1) infinite alternate;
+}
+#ya > img
+{
+    position: absolute;
+}
+#shuye1
+{
+    left: -54px;
+    top: 29px;
+    -webkit-transform-origin: 96% 10%;
+    -webkit-animation: yezi4 3s linear infinite alternate;
+}
+#shuye2
+{
+    left: 3px;
+    top: -77px;
+    -webkit-transform-origin: 37% 100%;
+    -webkit-animation: yezi1 3s linear infinite alternate;
+}
+#yedi
+{
+    left: 0px;
+    top: 680px;
+}
+#xing1
+{
+    left: 453px;
+    top: 705px;
+    -webkit-animation: xing2 3s linear infinite;
+}
+#xing2
+{
+    left: 228px;
+    top: 699px;
+    -webkit-animation: xing3 3s 2s linear infinite;
+}
+#xing3
+{
+    left: 37px;
+    top: 760px;
+    -webkit-animation: xing4 3s 1s linear infinite;
+}
+#xing4
+{
+    left: 373px;
+    top: 568px;
+    -webkit-animation: xing1 3s linear infinite;
+}
+#wenzi
+{
+    width: 100px;
+    height: 100px;
+    left: 230px;
+    top: 179px;
+    position: absolute;
+}
+.chi1
+{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    -webkit-transform-origin: 89% 92%;
+    -webkit-animation: chibang1 0.08s linear infinite alternate;
+
+}
+.chi2
+{
+    left: 5px;
+    top: 0px;
+    position: absolute;
+    -webkit-transform-origin: 89% 92%;
+    -webkit-transform: scale(-1,1);
+    -webkit-animation: chibang2 0.08s linear infinite alternate;
+
+}
+.tui1
+{
+    left: 18px;
+    top: 29px;
+    position: absolute;
+}
+.tui2
+{
+    left: 30px;
+    top: 29px;
+    position: absolute;
+    -webkit-transform: scale(-1,1);
+}
+.yan
+{
+    left: 19px;
+    top: 22px;
+    position: absolute;
+}
+.xian
+{
+    position: absolute;
+    left: 25px;
+    top: 42px;
+}
+#wenzi1
+{
+    position: absolute;
+    left: -100px;
+    top: 400px;
+    -webkit-animation: wenzi1 15s linear infinite;
+}
+#wenzi1div
+{
+    -webkit-animation: wenzi1div 15s linear infinite;
+}
+#wenzi2
+{
+    position: absolute;
+    left: 0px;
+    top: 670px;
+    -webkit-animation: wenzi1 18s 3s linear infinite;
+}
+#wenzi2div
+{
+    left: 600px;
+    -webkit-animation: wenzi2div 18s 3s linear infinite;;
+}
+#juxing
+{
+    left: 209px;
+    -webkit-transform: scale(2.5,-1);
+    top: 243px;
+    opacity: 0.5;
+    position: absolute;
+}
+#titlemoving
+{
+    position: absolute;
+    -webkit-animation: titlemoving 1s linear infinite alternate;
+}
+#div1
+{
+    border: 6px solid #fff;
+    width: 460px;
+    height: 300px;
+    position: absolute;
+    left: 20px;
+    top: 220px;
+    overflow: hidden;
+}
+#div2
+{
+    border: 6px solid #fff;
+    width: 380px;
+    height: 600px;
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    overflow: hidden;
+}
+
+.divimg
+{
+    position: absolute;
+    border: 6px solid #fff;
+    overflow: hidden;
+}
+.divcon
+{
+    width: 500px;
+    height: 815px;
+    position: absolute;
+    opacity: 0;
+    -webkit-transform-origin: 90% 20%;
+}
+.wenzi_1
+{
+    position: absolute;
+    left: 53px;
+}
+.wenzi_2
+{
+    position: absolute;
+    left: 390px;
+}
+
+#div1box
+{
+    position: absolute;
+    -webkit-animation: div1moving 1.5s ease-in-out infinite alternate;
+}
+#div2box
+{
+    position: absolute;
+    -webkit-animation: div2moving 1.5s ease-in-out infinite alternate;
+}
+#div3box
+{
+    position: absolute;
+    -webkit-animation: div1moving 1.5s ease-in-out infinite alternate;
+}
+#div4box
+{
+    position: absolute;
+    -webkit-animation: div1moving 1.5s ease-in-out infinite alternate;
+}
+#pagetitle
+{
+    opacity: 0;
+}
+
+@-webkit-keyframes yezi1
+{
+    from  {-webkit-transform: rotate(0deg);}
+    to    {-webkit-transform: rotate(3deg);}
+}
+@-webkit-keyframes yezi2
+{
+    from  {-webkit-transform: rotate(0deg) scale(-1,1);}
+    to    {-webkit-transform: rotate(-3deg) scale(-1,1);}
+}
+@-webkit-keyframes yezi3
+{
+    from  {-webkit-transform: rotate(0deg) scale(0.7);}
+    to    {-webkit-transform: rotate(5deg) scale(0.7);}
+}
+@-webkit-keyframes yezi4
+{
+    from  {-webkit-transform: rotate(0deg);}
+    to    {-webkit-transfrom: rotate(-3deg);}
+}
+@-webkit-keyframes xing1
+{
+    0%   {-webkit-transform: rotate(0deg);opacity: 0}
+    30%  {-webkit-transform: rotate(60deg);opacity: 1}
+    60%  {-webkit-transform: rotate(120deg);opacity: 0}
+    100% {opacity: 0}
+}
+@-webkit-keyframes xing2
+{
+    0%   {opacity: 0;-webkit-transform: translate(0px,0px) rotate(60deg);}
+    30%  {opacity: 1;-webkit-transform: translate(0px,-45px) rotate(42deg);}
+    100% {opacity: 0;-webkit-transform: translate(0px,-150px) rotate(0deg);}
+}
+@-webkit-keyframes xing3
+{
+    from  {opacity: 1;-webkit-transform: translate(0px,0px);}
+    to    {opacity: 0;-webkit-transform: translate(0px,-100px);}
+}
+@-webkit-keyframes xing4
+{
+    0%   {opacity: 0;-webkit-transform: translate(0px,0px) rotate(-60deg);}
+    30%  {opacity: 1;-webkit-transform: translate(0px,-45px) rotate(-42deg);}
+    100% {opacity: 0;-webkit-transform: translate(0px,-150px) rotate(0deg);}
+}
+@-webkit-keyframes chibang1
+{
+    from  {-webkit-transform: rotate(0deg);}
+    to    {-webkit-transform: rotate(-70deg);}
+}
+@-webkit-keyframes chibang2
+{
+    from  {-webkit-transform: rotate(0deg) scale(-1,1);}
+    to    {-webkit-transform: rotate(70deg) scale(-1,1);}
+}
+@-webkit-keyframes wenzi1
+{
+    0%   {-webkit-transform: translate(0px,0px);-webkit-animation-timing-function: ease-out;}
+    35%  {-webkit-transform: translate(420px,0px);-webkit-animation-timing-function: ease-in-out;}
+    65%  {-webkit-transform: translate(200px,0px);-webkit-animation-timing-function: ease-in-out;}
+    100% {-webkit-transform: translate(620px,0px);-webkit-animation-timing-function: ease-in;}
+}
+@-webkit-keyframes wenzi1div
+{
+    0%   {-webkit-transform: translate(0px,0px);-webkit-animation-timing-function: ease-in-out;}
+    50%  {-webkit-transform: translate(0px,-150px);-webkit-animation-timing-function: ease-in-out;}
+    100% {-webkit-transform: translate(0px,-300px);-webkit-animation-timing-function: ease-in-out;}
+}
+@-webkit-keyframes wenzi2div
+{
+    0%   {-webkit-transform: translate(0px,0px) scale(-1,1);-webkit-animation-timing-function: ease-in-out;}
+    50%  {-webkit-transform: translate(0px,-150px) scale(-1,1);-webkit-animation-timing-function: ease-in-out;}
+    100% {-webkit-transform: translate(0px,-300px) scale(-1,1);-webkit-animation-timing-function: ease-in-out;}
+}
+@-webkit-keyframes titlemoving
+{
+    from  {-webkit-transform: translate(0px,0px);}
+    to    {-webkit-transform: translate(0px,-10px);}
+}
+@-webkit-keyframes title_in
+{
+    from  {opacity: 0;-webkit-transform: translate(0px,200px);}
+    to    {opacity: 1;-webkit-transform: translate(0px,0px);}
+}
+@-webkit-keyframes title_out
+{
+    from  {opacity: 1;-webkit-transform: translate(0px,0px);}
+    to    {opacity: 0;-webkit-transform: translate(0px,-300px);}
+}
+@-webkit-keyframes div1_in
+{
+    from  {-webkit-transform: translate(-400px,0px);opacity: 0}
+    to    {-webkit-transform: translate(0px,0px);opacity: 1}
+}
+@-webkit-keyframes div1_out
+{
+    from  {-webkit-transform: translate(0px,0px);opacity: 1}
+    to    {-webkit-transform: translate(400px,0px);opacity: 0}
+}
+@-webkit-keyframes div1moving
+{
+    from  {-webkit-transform: translate(-5px,0px);}
+    to    {-webkit-transform: translate(5px,0px);}
+}
+@-webkit-keyframes div2moving
+{
+    from  {-webkit-transform: translate(0px,-5px);}
+    to    {-webkit-transform: translate(0px,5px);}
+}
+@-webkit-keyframes div2_in
+{
+    from  {-webkit-transform: translate(0px,400px);opacity: 0}
+    to    {-webkit-transform: translate(0px,0px);opacity: 1}
+}
+@-webkit-keyframes div2_out
+{
+    from  {-webkit-transform: translate(0px,0px);opacity: 1}
+    to    {-webkit-transform: translate(0px,-400px);opacity: 0}
+}
+@-webkit-keyframes div3_in
+{
+    from  {-webkit-transform: translate(400px,0px);opacity: 0}
+    to    {-webkit-transform: translate(0px,0px);opacity: 1}
+}
+@-webkit-keyframes div3_out
+{
+    from  {-webkit-transform: translate(0px,0px);opacity: 1}
+    to    {-webkit-transform: translate(-400px,0px);opacity: 0}
+}
+@-webkit-keyframes div4_in
+{
+    from  {-webkit-transform: scale(0.3);opacity: 0}
+    to    {-webkit-transform: scale(1);opacity: 1}
+}
+@-webkit-keyframes div4_out
+{
+    from  {-webkit-transform: translate(0px,0px) scale(1);opacity: 1}
+    to    {-webkit-transform: translate(-400px,400px) scale(1);opacity: 0}
+}
+
+</style>
+
+<div id='container'>
+    <img src='assets/bg1.jpg'>
+
+    <img id='ye3' src='assets/ye03.png'>
+    <img id='ye5' src='assets/ye03.png'>
+    <img id='ye2' src='assets/ye02.png'>
+    <img id='ye1' src='assets/ye01.png'>
+    <img id='ye4' src='assets/ye01.png'>
+
+
+    <div id='pagetitle'>
+        <div id='titlemoving'>
+            <img id='juxing' src='assets/juxing.png'>
+             <div style='position: absolute;width: 212px;height: 238px;top: 262px;left: 149px;overflow: hidden;'>
+                <div style='position:absolute;width:212px;height:238px;top:0px;left:0px;overflow:hidden;'>
+                    <div style='position:absolute;width:212px;height:238px;display:table;overflow:hidden;'>
+                        <div id='titlecontent' style='width:212px;height:238px;vertical-align:middle;display:table-cell;text-align:center;font-size:32px;line-height:45px;color:#3F6E08;font-weight:bold;'></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id='wenzi'>
+                <img src='assets/chi.png' class='chi1'>
+                <img src='assets/chi.png' class='chi2'>
+                <img src='assets/yan.png' class='yan'>
+                <img src='assets/tui.png' class='tui1'>
+                <img src='assets/tui.png' class='tui2'>
+                <img src='assets/xian.png' class='xian'>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div id='div1box'>
+        <div id='div1con' class='divcon'>
+            <div id='div1' class='divimg'>
+                <img id='img1' style='position:absolute'>
+                <span id='word1' class='showwords'></span>
+            </div>
+            <div id='wenzi1_1' class='wenzi_1'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+            <div id='wenzi1_2' class='wenzi_2'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+        </div>
+    </div>
+
+    <div id='div2box'>
+        <div id='div2con' class='divcon'>
+            <div id='div2' class='divimg'>
+                <img id='img2' style='position:absolute'>
+                <span id='word2' class='showwords'></span>
+            </div>
+            <div id='wenzi2_1' class='wenzi_1'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+            <div id='wenzi2_2' class='wenzi_2'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+        </div>
+    </div>
+
+    <div id='div3box'>
+        <div id='div3con' class='divcon'>
+            <div id='div3' class='divimg'>
+                <img id='img3' style='position:absolute'>
+                <span id='word3' class='showwords'></span>
+            </div>
+            <div id='wenzi3_1' class='wenzi_1'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+            <div id='wenzi3_2' class='wenzi_2'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+        </div>
+    </div>
+
+    <div id='div4box'>
+        <div id='div4con' class='divcon'>
+            <div id='div4' class='divimg'>
+                <img id='img4' style='position:absolute'>
+                <span id='word4' class='showwords'></span>
+            </div>
+            <div id='wenzi4_1' class='wenzi_1'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+            <div id='wenzi4_2' class='wenzi_2'>
+                    <img src='assets/chi.png' class='chi1'>
+                    <img src='assets/chi.png' class='chi2'>
+                    <img src='assets/yan.png' class='yan'>
+                    <img src='assets/tui.png' class='tui1'>
+                    <img src='assets/tui.png' class='tui2'>
+                    <img src='assets/xian.png' class='xian'>
+            </div>
+        </div>
+    </div>
+
+    <div id='wenzi1div'>
+        <div id='wenzi1'>
+            <img src='assets/chi.png' class='chi1'>
+            <img src='assets/chi.png' class='chi2'>
+            <img src='assets/yan.png' class='yan'>
+        </div>
+    </div>
+
+
+    <div id='wenzi2div'>
+        <div id='wenzi2'>
+            <img src='assets/chi.png' class='chi1'>
+            <img src='assets/chi.png' class='chi2'>
+            <img src='assets/yan.png' class='yan'>
+        </div>
+    </div>
+
+    <div id='ya'>
+        <img src='assets/jing01.png'>
+        <img id='shuye1' src='assets/ye05.png'>
+        <img id='shuye2' src='assets/ye06.png'>
+    </div>
+
+    <img id='xing2' src='assets/xingmang.png'>
+    <img id='xing3' src='assets/xingmang.png'>
+    <img id='yedi' src='assets/yedi.png'>
+
+    <img id='xing1' src='assets/xingmang.png'>
+    <img id='xing4' src='assets/xingmang.png'>
+
+</div>
+
+
+
+<script>
+
+var get_pid = function(url){
+    var index1 = url.indexOf("?");
+    if(index1 != -1)
+    {
+        url = url.substr(0, index1);
+    }
+    return url.toString().substr(url.lastIndexOf("/") + 1);
+}
+
+function id(name)
+{
+    return document.getElementById(name)
+}
+
+function showtitle()
+{
+    id('pagetitle').style.webkitAnimation = 'title_in 1.5s ease-out both';
+    id('titlecontent').innerHTML = e_desc;
+}
+
+function distitle()
+{
+    id('pagetitle').style.webkitAnimation = 'title_out 2.5s ease-in both';
+
+    timeout1 = setTimeout(show1,2000)
+}
+
+function show1()
+{
+    setImageindex();
+    set_items_position('1');
+
+    id('div1con').style.webkitAnimation = 'div1_in 2s ease-out both';
+
+    timeout2 = setTimeout(show2,6000)
+}
+
+function show2()
+{
+    setImageindex();
+    set_items_position('2');
+
+    id('div1con').style.webkitAnimation = 'div1_out 1.5s ease-in both'
+    id('div2con').style.webkitAnimation = 'div2_in 2s ease-out 1s both';
+
+    timeout3 = setTimeout(show3,6000)
+}
+
+function show3()
+{
+    setImageindex();
+    set_items_position('3');
+
+    id('div2con').style.webkitAnimation = 'div2_out 1.5s ease-in both'
+    id('div3con').style.webkitAnimation = 'div3_in 2s ease-out 1s both';
+
+    timeout4 = setTimeout(show4,6000)
+}
+
+function show4()
+{
+    setImageindex();
+    set_items_position('4');
+
+    id('div3con').style.webkitAnimation = 'div3_out 1.5s ease-in both'
+    id('div4con').style.webkitAnimation = 'div4_in 2s ease-out 1s both';
+
+    timeout5 = setTimeout(show1_1,6000)
+
+}
+
+function show1_1()
+{
+    setImageindex();
+    set_items_position('1');
+
+    id('div4con').style.webkitAnimation = 'div4_out 1.5s ease-in both'
+    id('div1con').style.webkitAnimation = 'div1_in 2s ease-out 1s both';
+
+    timeout6 = setTimeout(show2,6000)
+}
+
+function insertEnter(str,n){
+    var len = str.length;
+    var strTemp = '';
+    if(len > n){
+    strTemp = str.substring(0,n);
+    str = str.substring(n,len);
+    return strTemp+'\n'+str;
+    }else{
+    return str;
+    }
+}
+
+function set_items_position(pageid)
+{
+    var img_bili = image_size_width[image_url_index]/image_size_height[image_url_index];
+
+
+    var div = id('div'+pageid);
+    var img = id('img'+pageid);
+
+    img.src = Onload_imgs_url[image_url_index];
+    
+    var word = id("word" + pageid);
+    var word_string = words[get_pid(Onload_imgs_url[image_url_index])];
+    if(word_string != undefined)
+
+    {   
+        word_string = word_string.replace(/[\n]/ig,'');
+        
+        var word_length = word_string.length;
+        if(word_length >= 5)
+        {
+            word.style.fontSize = "25px";
+            if(word_length > 10)
+                word_string = insertEnter(word_string, 5);
+        }else {
+            word.style.fontSize = "28px";
+        }
+        word.innerText = word_string;
+    }
+    else
+    {
+        word.innerText = "";
+    }
+
+    if(img_bili >= 1)
+    {
+        id('wenzi'+pageid+'_1').style.top = '158px';
+        id('wenzi'+pageid+'_2').style.top = '158px';
+
+
+        div.style.width = '460px';
+        if(img_bili > (460/300))
+        {
+            div.style.height = '300px';
+
+            img.style.height = '300px';
+            img.style.width = 300 * img_bili + 'px';
+            img.style.left = (460 - 300 * img_bili)/2 + 'px';
+            img.style.top = '0px';
+        }
+        else
+        {
+            div.style.height = 460 / img_bili + 'px';
+
+            img.style.width = '460px';
+            img.style.height = 460/img_bili+'px';
+            img.style.left = '0px';
+            img.style.top = '0px';
+        }
+
+        div.style.left = '20px';
+        div.style.top = '220px';   
+
+    }
+    else
+    {
+        id('wenzi'+pageid+'_1').style.top = '38px';
+        id('wenzi'+pageid+'_2').style.top = '38px';
+
+        div.style.width = '380px';
+        if(img_bili < (380/600))
+        {
+            div.style.height = '600px';
+
+            img.style.width = '380px';
+            img.style.height = 380 / img_bili + 'px';
+            img.style.left = '0px';
+            img.style.top = (600-380/img_bili)/2 + 'px';
+        }
+        else
+        {
+            div.style.height = 380 / img_bili+ 'px';
+
+            img.style.width = '380px';
+            img.style.height = 380 / img_bili + 'px';
+            img.style.left = '0px';
+            img.style.top = '0px';
+        }
+        
+        div.style.left = '60px';
+        div.style.top = '100px';
+    }
+
+    image_url_index++;
+
+}
+
+
+call_me(load_images);
+var image_size_width=[];
+var image_size_height=[];
+var image_url_index=0;
+var have_num = 0;
+var error_num = 0;
+var canshow = true;
+var reshow = false;
+var delaytime=5000;
+
+var timeout0;
+var timeout1;
+var timeout2;
+var timeout3;
+var timeout4;
+var timeout5;
+var timeout6;
+
+function load_images()
+{
+    reshow = false;
+    image_size_width=[];
+    image_size_height=[];
+    Onload_imgs_url=[];
+    image_url_index=0;
+    have_num = 0;
+    error_num = 0;
+    begin_titletime = new Date();
+    begin_titletime = begin_titletime.getTime();
+    canshow = true;
+    showtitle();
+    
+    bl_keepload = 'first';
+    step_load();
+
+}
+//每次执行加载后5张图片
+var bl_keepload = 'first';
+var step_loadnum = 5;
+function step_load()
+{
+    var load_num = 0
+    //初步加载X张
+    if(image_url_index  == 0 && bl_keepload == 'first')
+    {
+
+        if(slider_images_url.length > step_loadnum)
+        {
+            load_num = step_loadnum;
+            bl_keepload = 'next';
+        }
+        else
+        {
+            load_num = slider_images_url.length;
+            bl_keepload = 'end';
+        }
+        for(var i = 0; i< load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+    else if(bl_keepload == 'end')
+    {
+        return;
+    }
+    else
+    {
+
+        if(slider_images_url.length - image_url_index >step_loadnum*2)
+        { 
+            load_num = step_loadnum;
+        }
+        else
+        {
+            load_num = slider_images_url.length - image_url_index - step_loadnum;
+            bl_keepload = 'end';
+        }
+        for(var i = image_url_index +step_loadnum; i< image_url_index + step_loadnum + load_num; i++)
+        {
+            var img=new Image();
+            img.index=i;
+            img.src=slider_images_url[i];
+            img.onload=image_onload;
+            img.onerror= image_onerror;
+            Onload_imgs_url[i] = 'loading';
+        }
+    }
+
+}
+function image_onerror(event)
+{
+    var img = event.target;
+    var index = img.index;
+    if(index<step_loadnum)
+        error_num ++;
+    Onload_imgs_url[index] = 'not find';
+
+    if((have_num+error_num >= step_loadnum || slider_images_url.length == (have_num+error_num)) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        if(have_num == 0)
+            return;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout0 = setTimeout(function()
+                {
+                    distitle();
+                },dis_titletime);
+        }
+    }
+}
+
+function image_onload(event)
+{
+    if(reshow == true)
+        return;
+
+    var img = event.target;
+    var index = img.index;
+
+    if(index<step_loadnum)
+    {
+        have_num++;
+    }
+    Onload_imgs_url[index] = img.src;
+    image_size_height[index] = img.height;
+    image_size_width[index] = img.width;
+
+
+
+    if((have_num + error_num >= step_loadnum ||slider_images_url.length == (have_num+error_num)) && canshow == true)
+    {   
+        reshow = false;
+        canshow =false;
+        if(have_num == 0)
+            return;
+        var end_titletime = new Date();
+        end_titletime = end_titletime.getTime();
+        var dis_titletime = Math.abs(end_titletime-begin_titletime);
+        if(dis_titletime>delaytime)
+        {
+            distitle();
+        }
+        else
+        {
+            dis_titletime = delaytime- dis_titletime;
+            timeout0 = setTimeout(function()
+                {
+                    distitle();
+                },dis_titletime);
+        }
+
+    }
+    
+}
+function setImageindex()
+{
+    if(image_url_index == Onload_imgs_url.length)
+        image_url_index = 0;
+
+    while(Onload_imgs_url[image_url_index] == 'not find' || Onload_imgs_url[image_url_index] == 'loading')
+    {
+
+        if(image_url_index % step_loadnum == 0)
+        {
+            step_load();
+        }
+        image_url_index++;
+        if(image_url_index == Onload_imgs_url.length)
+            image_url_index = 0;
+    }
+
+
+
+
+    if(image_url_index % step_loadnum == 0)
+    {
+        step_load();
+    }
+
+}
+
+function reload_scene()
+{
+    clearnode();
+    reshow = true;
+    setTimeout(load_images,100);
+}
+
+function clearnode()
+{
+    id('div1con').style.webkitAnimation = '';
+    id('div2con').style.webkitAnimation = '';
+    id('div3con').style.webkitAnimation = '';
+    id('div4con').style.webkitAnimation = '';
+    id('pagetitle').style.webkitAnimation = '';
+
+    clearTimeout(timeout0);
+    clearTimeout(timeout1);
+    clearTimeout(timeout2);
+    clearTimeout(timeout3);
+    clearTimeout(timeout4);
+    clearTimeout(timeout5);
+    clearTimeout(timeout6);
+
+}
+
+
+        if(typeof(objid) === "undefined")
+        {
+            var objid = function(id)
+            {
+                return document.getElementById(id);
+            }
+        }
+
+
+        function on_wx_music_init()
+        {
+            if(e_desc != "")
+            {
+                document.title = e_desc.replace("<br>", "\n").replace("<br/>", "\n");;
+            }
+            else
+            {
+                document.title = "音乐相册";
+            }
+            loadingdiv_out();
+            create_music();
+
+
+        }
+
+
+
+
+        call_me(on_wx_music_init);
+
+        //音乐播放
+
+        var music_header   = 'http://kawaweika.qiniudn.com/sound/';
+        var e_music_player = new Audio();
+
+        function play_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+
+            if(e_music_url.indexOf('qqmusic') != -1)
+            {
+                mymusic = 'https://qnphoto.kagirl.cn/music/688042.m4a';
+            }
+            else
+            {
+                mymusic = e_music_url;
+            }
+
+            e_music_player.src  = mymusic;
+            e_music_player.loop = 'loop';
+
+
+            e_music_player.onerror = function(){
+                if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                {
+                    var url = e_music_url.replace("http://sound.kagirl.net", "https://music.kagirl.cn");
+                }
+                else
+                {
+                    var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                }
+
+                e_music_player.src = url;
+                e_music_player.play();
+                e_music_player.onerror = null;
+            }
+            
+            e_music_player.play();
+            
+            //检查音乐是否缓冲成功
+            setTimeout(function()
+            {
+                var timeRanges = e_music_player.buffered;
+                var timeBuffered = timeRanges.end(timeRanges.length - 1);
+                var bufferPercent = timeBuffered /e_music_player.duration; 
+                
+
+                if(isNaN(bufferPercent) || bufferPercent == 0)
+                {
+                    if(e_music_url.indexOf("http://sound.kagirl.net") != -1)
+                    {
+                        var url = e_music_url.replace("http://sound.kagirl.net", "http://kawaweika.qiniudn.com");
+                    }
+                    else
+                    {
+                        var url = e_music_url.replace("https://music.kagirl.cn", "http://sound.kagirl.net");    
+                    }
+                    e_music_player.src = url;
+                    e_music_player.play();
+                }
+            },5000);
+
+
+            if(objid('sound_image'))
+            {
+                objid('sound_image').style.webkitAnimation     = "zhuan 3s linear infinite";
+            }
+            
+            bplay = 1;
+        }
+
+        function create_music()
+        {
+            if(e_music_url == '')
+            {
+                return ;
+            }
+            
+            play_music();
+
+            sound_div = document.createElement("div");
+            sound_div.setAttribute("ID", "cardsound");
+            sound_div.style.cssText = "position:fixed;right:20px;top:25px;z-index:50;visibility:visible;";
+            sound_div.onclick = switchsound;
+
+            bg_htm  = "<img id='sound_image' src='assets/music_note_big.png' style='-webkit-animation:zhuan 3s linear infinite'>";
+            txt_htm = "<div id='music_txt' style='color:white;position:absolute;left:-40px;top:30px;width:60px'></div>"
+
+            sound_div.innerHTML = bg_htm  + txt_htm;
+
+            document.body.appendChild(sound_div);
+        } 
+
+        var bplay = 0;              
+        
+        function switchsound()
+        {
+            au = e_music_player;
+            ai = objid('sound_image');
+            if(au.paused)
+            {
+                bplay = 1;
+                au.play();
+                ai.style.webkitAnimation     = "zhuan 3s linear infinite";
+                objid("music_txt").innerHTML = "打开";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+            else
+            {
+                bplay = 0;
+                au.pause();
+                ai.style.webkitAnimation     = "";
+                objid("music_txt").innerHTML = "关闭";
+                objid("music_txt").style.visibility = "visible";
+                setTimeout(function(){objid("music_txt").style.visibility="hidden"}, 2500);
+            }
+        }
+
+    function loadingdiv_out()
+    {
+        objid('loadingdiv').style.webkitAnimation = 'fadeout 0.3s linear both';
+        if(navigator.userAgent.indexOf('Windows Phone')!=1)
+        {
+            objid('loadingdiv').style.display = 'none';
+        }
+
+        setTimeout(function()
+        {
+            objid('loadingdiv').style.display = 'none';
+        },400)
+    }
+    
+    </script>
+
+
+
+<div id='loadingdiv'>
+    <div class='loadingword'>相册正在加载中<br>请稍等……</div>
+</div>
+
